@@ -14,7 +14,23 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+
+    "paths": {
+      "@/*": ["./src/*"],
+      "@components/*": ["./components/*"],
+      "@utils/*": ["./utils/*"]
+    }
   },
-  "include": ["./src"]
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
+    "postcss.config.js",
+    "tailwind.config.js",
+    "lint-staged.config.cjs",
+    "babel.config.cjs",
+    "cypress.config.ts"
+  ]
 }
