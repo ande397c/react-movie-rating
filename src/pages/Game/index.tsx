@@ -1,20 +1,40 @@
-import { moviesData } from '../../data/moviesData'
-import { Card } from '../../components/Card'
-import { getRandomArrayElements } from '../../utils/getRandomArrayElements'
 import { useState } from 'react'
+import { Card } from '../../components/Card'
+import { Button } from '../../components/Button'
+import { getRandomArrayElements } from '../../utils/getRandomArrayElements'
+import { getHighestRating } from '../../utils/getHighestRating'
+import { Movie } from '@/types/movie'
+import { moviesData } from '../../data/moviesData'
 
 export const Game = () => {
-  const [movies, setMovies] = useState(
+  const [movies, setMovies] = useState<Movie[]>(
     getRandomArrayElements({ array: moviesData, num: 2 })
   )
   const [points, setPoints] = useState<number>(0)
+  const [selected, setSelected] = useState<number | null>(null)
+  const [clicked, setClicked] = useState<boolean>(false)
 
-  const handleClick = () => {
-    console.log('handleClick')
+  const handleClick = (movie: Movie, index: number) => {
+    setSelected(index)
+    setClicked(true)
+    const highestRating = getHighestRating({ array: movies })
+
+    if (highestRating === movie.vote_average) {
+      if (clicked) {
+        return
+      }
+      setPoints((prevPoints) => prevPoints + 1)
+    } else {
+      alert('game lost')
+    }
   }
 
   const replaceMovies = () => {
-    setMovies(getRandomArrayElements({ array: moviesData, num: 2 }))
+    if (clicked) {
+      setClicked(false)
+      setSelected(null)
+      setMovies(getRandomArrayElements({ array: moviesData, num: 2 }))
+    }
   }
 
   return (
@@ -26,25 +46,27 @@ export const Game = () => {
         </h2>
       </header>
       <div className="h-screen w-full flex justify-center items-center flex-col text-text">
-        <h3 className="text-2xl mb-16">Which movie has the highest rating?</h3>
-        <div className="flex gap-8 items-center h-[25rem]">
+        <h3 className="text-2xl mb-12">Which movie has the highest rating?</h3>
+        <div className="flex gap-4 items-center h-[23rem]">
           <h4 className="text-2xl mb-12">OR</h4>
-          {movies.map((movie) => (
+          {movies.map((movie, index) => (
             <Card
               key={movie.id}
-              img={`https://image.tmdb.org/t/p/w185${movie.poster_path}`}
+              clicked={clicked}
+              isSelected={index === selected}
+              img={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
               title={movie.title}
               score={movie.vote_average}
-              onClick={handleClick}
+              onClick={() => handleClick(movie, index)}
             />
           ))}
         </div>
-        <button
-          className="bg-button rounded-xl border-none h-10 text-center mt-8 transition-all duration-150 hover:bg-hover w-40"
+        <Button
+          text="Generate new pair"
+          isDisabled={!clicked}
           onClick={replaceMovies}
-        >
-          New pair
-        </button>
+        />
+        {/* <h3 className="mt-4">Correct</h3> */}
       </div>
     </>
   )

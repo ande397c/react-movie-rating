@@ -1,12 +1,13 @@
-interface GetRandomArrayElementsProps<T> {
-  array: T[]
+import { Movie } from '@/types/movie'
+interface GetRandomArrayElementsProps {
+  array: Movie[]
   num: number
 }
 
-export const getRandomArrayElements = <T,>({
+export const getRandomArrayElements = ({
   array,
   num
-}: GetRandomArrayElementsProps<T>): T[] => {
+}: GetRandomArrayElementsProps) => {
   const shuffled = [...array].sort(() => 0.5 - Math.random())
   return shuffled.slice(0, num)
 }

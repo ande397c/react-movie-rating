@@ -1,14 +1,28 @@
+import clsx from 'clsx'
+
 interface CardProps {
   img: string
   title: string
   score: number
+  clicked: boolean
+  isSelected: boolean
   onClick: () => void
 }
 
-export const Card = ({ img, title, score, onClick }: CardProps) => {
+export const Card = ({
+  img,
+  title,
+  score,
+  clicked,
+  isSelected,
+  onClick
+}: CardProps) => {
   return (
     <div
-      className="el-container group flex justify-center flex-col items-center transition-all duration-150 hover:scale-110 cursor-pointer"
+      className={clsx(
+        'el-container group flex justify-center flex-col items-center transition-all duration-150 hover:scale-110 cursor-pointer',
+        { 'scale-125': isSelected, 'pointer-events-none': clicked }
+      )}
       onClick={onClick}
     >
       <div className="w-[160px] h-full">
@@ -20,14 +34,15 @@ export const Card = ({ img, title, score, onClick }: CardProps) => {
         </h3>
       </div>
       <div className="mt-2 text-[1.3rem] text-center">
-        <p className="text-secondary">{score}</p>
+        <p
+          className={clsx('text-secondary', {
+            visible: clicked,
+            invisible: !clicked
+          })}
+        >
+          {clicked ? score : 'Nice try'}
+        </p>
       </div>
     </div>
   )
 }
-
-// <div className="text-center hover:scale-110 transition-all duration-150 flex flex-col items-center">
-//   <img src={img} alt="" className="rounded-sm" />
-//   <h4 className="py-3 truncate-title">{title}</h4>
-//   <h4>{score}</h4>
-// </div>
