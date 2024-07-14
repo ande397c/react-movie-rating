@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Card } from '../../components/Card'
 import { Button } from '../../components/Button'
+import { Modal } from '../../components/Modal'
 import { getRandomArrayElements } from '../../utils/getRandomArrayElements'
 import { getHighestRating } from '../../utils/getHighestRating'
 import { Movie } from '@/types/movie'
@@ -13,6 +14,7 @@ export const Game = () => {
   const [points, setPoints] = useState<number>(0)
   const [selected, setSelected] = useState<number | null>(null)
   const [clicked, setClicked] = useState<boolean>(false)
+  const [showModal, setShowModal] = useState<boolean>(false)
 
   const handleClick = (movie: Movie, index: number) => {
     setSelected(index)
@@ -25,7 +27,7 @@ export const Game = () => {
       }
       setPoints((prevPoints) => prevPoints + 1)
     } else {
-      alert('game lost')
+      setShowModal(true)
     }
   }
 
@@ -66,8 +68,8 @@ export const Game = () => {
           isDisabled={!clicked}
           onClick={replaceMovies}
         />
-        {/* <h3 className="mt-4">Correct</h3> */}
       </div>
+      <Modal showModal={showModal} streak={points} />
     </>
   )
 }
