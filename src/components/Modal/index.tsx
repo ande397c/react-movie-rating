@@ -42,7 +42,7 @@ export const Modal = ({ showModal, streak, onClick }: ModalProps) => {
                   </form> */}
                   <div className="flex justify-center gap-8 mt-6">
                     <Link to="/">
-                      <Button text="Frontpage" />
+                      <Button text="Front page" />
                     </Link>
                     <Button text="Play again" onClick={onClick} />
                   </div>
