@@ -31,6 +31,12 @@ export const Game = () => {
     }
   }
 
+  const reset = () => {
+    setShowModal(false)
+    setPoints(0)
+    replaceMovies()
+  }
+
   const replaceMovies = () => {
     if (clicked) {
       setClicked(false)
@@ -42,7 +48,7 @@ export const Game = () => {
   return (
     <>
       <header className="p-4 px-12 text-text flex justify-between text-lg fixed w-full">
-        <h2 className="text-2xl">Category:</h2>
+        {/* <h2 className="text-2xl">Category:</h2> */}
         <h2 className="text-2xl">
           Streak: <span className="text-secondary">{points}</span>
         </h2>
@@ -69,7 +75,7 @@ export const Game = () => {
           onClick={replaceMovies}
         />
       </div>
-      <Modal showModal={showModal} streak={points} />
+      <Modal showModal={showModal} streak={points} onClick={reset} />
     </>
   )
 }

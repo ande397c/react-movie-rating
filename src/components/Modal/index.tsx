@@ -1,12 +1,14 @@
-import { useState } from 'react'
+// import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Button } from '../Button'
 interface ModalProps {
   showModal: boolean
   streak: number
+  onClick?: () => void
 }
 
-export const Modal = ({ showModal, streak }: ModalProps) => {
-  const [inputLength, setInputLength] = useState<number>(0)
+export const Modal = ({ showModal, streak, onClick }: ModalProps) => {
+  // const [inputLength, setInputLength] = useState<number>(0)
   return (
     <>
       {showModal && (
@@ -25,8 +27,8 @@ export const Modal = ({ showModal, streak }: ModalProps) => {
 
                 {/*body*/}
                 <div className="px-6 mb-6">
-                  <p className="my-4">Want to register your score?</p>
-                  <form>
+                  {/* <p className="my-4">Want to register your score?</p> */}
+                  {/* <form>
                     <label className="block" htmlFor="name">
                       Name for the scoreboard
                     </label>
@@ -37,10 +39,12 @@ export const Modal = ({ showModal, streak }: ModalProps) => {
                       placeholder="Name"
                     />
                     <Button text="Submit" />
-                  </form>
+                  </form> */}
                   <div className="flex justify-center gap-8 mt-6">
-                    <Button text="Play again" />
-                    <Button text="Frontpage" />
+                    <Link to="/">
+                      <Button text="Frontpage" />
+                    </Link>
+                    <Button text="Play again" onClick={onClick} />
                   </div>
                 </div>
               </div>
