@@ -6,7 +6,7 @@ interface GetHighestRatingProps {
 
 export const getHighestRating = ({ array }: GetHighestRatingProps) => {
   const ratings = array.map((movie) => {
-    return movie.vote_average
+    return movie.rating
   })
   const highestRating = Math.max(...ratings)
   return highestRating

@@ -21,7 +21,7 @@ export const Game = () => {
     setClicked(true)
     const highestRating = getHighestRating({ array: movies })
 
-    if (highestRating === movie.vote_average) {
+    if (highestRating === movie.rating) {
       if (clicked) {
         return
       }
@@ -62,9 +62,9 @@ export const Game = () => {
               key={movie.id}
               clicked={clicked}
               isSelected={index === selected}
-              img={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
+              img={movie.poster_path}
               title={movie.title}
-              score={movie.vote_average}
+              score={movie.rating}
               onClick={() => handleClick(movie, index)}
             />
           ))}

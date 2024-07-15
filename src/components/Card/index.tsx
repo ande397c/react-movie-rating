@@ -1,4 +1,5 @@
 import clsx from 'clsx'
+import { getQualityPoster } from '../../utils/getQualityPoster'
 
 interface CardProps {
   img: string
@@ -26,7 +27,10 @@ export const Card = ({
       onClick={onClick}
     >
       <div className="w-[160px] h-full">
-        <img src={img} className="rounded-sm max-w-full max-h-full" />
+        <img
+          src={getQualityPoster(img)}
+          className="rounded-sm max-w-full max-h-full"
+        />
       </div>
       <div className="text-center pt-4 text-xl overflow-hidden w-[260px]">
         <h3 className="truncate group-hover:overflow-visible group-hover:whitespace-normal group-hover:text-clip">
