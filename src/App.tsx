@@ -2,7 +2,7 @@ import { ReactElement } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from './components/Button'
 
-function App(): ReactElement {
+const App = (): ReactElement => {
   return (
     <div className="h-screen w-full flex justify-center items-start">
       <div className="flex flex-col">
@@ -28,6 +28,9 @@ function App(): ReactElement {
           <article className="flex justify-center">
             <Link to="/game">
               <Button text="Play" />
+            </Link>
+            <Link to="/highscores">
+              <Button text="Highscores" />
             </Link>
           </article>
         </section>

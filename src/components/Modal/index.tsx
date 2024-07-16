@@ -1,6 +1,7 @@
-// import { useState } from 'react'
+import { FormEvent, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '../Button'
+import { supabase } from '../../services/supabaseClient'
 interface ModalProps {
   showModal: boolean
   streak: number
@@ -8,7 +9,27 @@ interface ModalProps {
 }
 
 export const Modal = ({ showModal, streak, onClick }: ModalProps) => {
-  // const [inputLength, setInputLength] = useState<number>(0)
+  const [name, setName] = useState<string>('')
+  const [isloading, setIsLoading] = useState(false)
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault()
+    setIsLoading(true)
+
+    if (name.length == 0) {
+      return
+    }
+
+    const { error } = await supabase
+      .from('highscores')
+      .insert({ name: name, highscore: streak })
+    localStorage.setItem('name', name)
+
+    if (error) {
+      console.log(error)
+    }
+    setIsLoading(false)
+  }
   return (
     <>
       {showModal && (
@@ -27,8 +48,8 @@ export const Modal = ({ showModal, streak, onClick }: ModalProps) => {
 
                 {/*body*/}
                 <div className="px-6 mb-6">
-                  {/* <p className="my-4">Want to register your score?</p> */}
-                  {/* <form>
+                  <p className="my-4">Want to register your score?</p>
+                  <form onSubmit={handleSubmit}>
                     <label className="block" htmlFor="name">
                       Name for the scoreboard
                     </label>
@@ -37,9 +58,16 @@ export const Modal = ({ showModal, streak, onClick }: ModalProps) => {
                       name="name"
                       type="text"
                       placeholder="Name"
+                      onChange={(e) => {
+                        setName(e.target.value)
+                      }}
                     />
-                    <Button text="Submit" />
-                  </form> */}
+                    <Button
+                      text="Submit"
+                      type="submit"
+                      isDisabled={name.length == 0}
+                    />
+                  </form>
                   <div className="flex justify-center gap-8 mt-6">
                     <Link to="/">
                       <Button text="Front page" />
