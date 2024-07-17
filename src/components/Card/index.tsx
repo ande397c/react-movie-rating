@@ -1,10 +1,12 @@
+import { useState } from 'react'
 import clsx from 'clsx'
-import { getQualityPoster } from '../../utils/getQualityPoster'
+import { getQualityPoster } from '@utils/getQualityPoster'
+import MoviePoster from '../../../assets/movie_poster.png'
 
 interface CardProps {
   img: string
   title: string
-  score: number
+  rating: number
   clicked: boolean
   isSelected: boolean
   onClick: () => void
@@ -13,11 +15,12 @@ interface CardProps {
 export const Card = ({
   img,
   title,
-  score,
+  rating,
   clicked,
   isSelected,
   onClick
 }: CardProps) => {
+  const [fallbackImg, setFallbackImg] = useState(false)
   return (
     <div
       className={clsx(
@@ -28,8 +31,11 @@ export const Card = ({
     >
       <div className="w-[160px] h-full">
         <img
-          src={getQualityPoster(img)}
+          src={fallbackImg ? MoviePoster : getQualityPoster(img)}
           className="rounded-sm max-w-full max-h-full"
+          onError={() => {
+            setFallbackImg(true)
+          }}
         />
       </div>
       <div className="text-center pt-4 text-xl overflow-hidden w-[260px]">
@@ -37,14 +43,14 @@ export const Card = ({
           {title}
         </h3>
       </div>
-      <div className="mt-2 text-[1.3rem] text-center">
+      <div className="mt-4 text-[1.3rem] text-center">
         <p
           className={clsx('text-secondary', {
             visible: clicked,
             invisible: !clicked
           })}
         >
-          {clicked ? score : 'Nice try'}
+          {clicked ? rating : 'Nice try'}
         </p>
       </div>
     </div>

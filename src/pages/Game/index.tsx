@@ -1,11 +1,12 @@
 import { useState } from 'react'
-import { Card } from '../../components/Card'
-import { Button } from '../../components/Button'
-import { Modal } from '../../components/Modal'
-import { getRandomArrayElements } from '../../utils/getRandomArrayElements'
-import { getHighestRating } from '../../utils/getHighestRating'
+import { Link } from 'react-router-dom'
+import { Card } from '@components/Card'
+import { Button } from '@components/Button'
+import { Modal } from '@components/Modal'
+import { getRandomArrayElements } from '@utils/getRandomArrayElements'
+import { getHighestRating } from '@utils/getHighestRating'
 import { Movie } from '@/types/movie'
-import { moviesData } from '../../data/moviesData'
+import { moviesData } from '@data/moviesData'
 
 export const Game = () => {
   const [movies, setMovies] = useState<Movie[]>(
@@ -41,7 +42,11 @@ export const Game = () => {
     if (clicked) {
       setClicked(false)
       setSelected(null)
-      setMovies(getRandomArrayElements({ array: moviesData, num: 2 }))
+      let randomMovies = getRandomArrayElements({ array: moviesData, num: 2 })
+      while (randomMovies[0].rating === randomMovies[1].rating) {
+        randomMovies = getRandomArrayElements({ array: moviesData, num: 2 })
+      }
+      setMovies(randomMovies)
     }
   }
 
@@ -49,13 +54,18 @@ export const Game = () => {
     <>
       <header className="p-4 px-12 text-text flex justify-between text-lg fixed w-full">
         {/* <h2 className="text-2xl">Category:</h2> */}
+        <Link to="/">
+          <Button text="Go back" />
+        </Link>
         <h2 className="text-2xl">
           Streak: <span className="text-secondary">{points}</span>
         </h2>
       </header>
       <div className="h-screen w-full flex justify-center items-center flex-col text-text">
-        <h3 className="text-2xl mb-12">Which movie has the highest rating?</h3>
-        <div className="flex gap-4 items-center h-[28rem]">
+        <h3 className="text-2xl text-center">
+          Which movie has the highest rating?
+        </h3>
+        <div className="flex items-center h-[28rem] mt-5">
           <h4 className="text-2xl mb-12">OR</h4>
           {movies.map((movie, index) => (
             <Card
@@ -64,7 +74,7 @@ export const Game = () => {
               isSelected={index === selected}
               img={movie.poster_path}
               title={movie.title}
-              score={movie.rating}
+              rating={movie.rating}
               onClick={() => handleClick(movie, index)}
             />
           ))}

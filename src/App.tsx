@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
 import { Link } from 'react-router-dom'
-import { Button } from './components/Button'
+import { Button } from '@components/Button'
 
 const App = (): ReactElement => {
   return (
@@ -30,7 +30,7 @@ const App = (): ReactElement => {
               <Button text="Play" />
             </Link>
             <Link to="/highscores">
-              <Button text="Highscores" />
+              <Button text="View highscores" />
             </Link>
           </article>
         </section>

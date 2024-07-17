@@ -1,6 +1,6 @@
 import { FormEvent, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Button } from '../Button'
+import { Button } from '@components/Button'
 import { supabase } from '../../services/supabaseClient'
 interface ModalProps {
   showModal: boolean
@@ -38,7 +38,7 @@ export const Modal = ({ showModal, streak, onClick }: ModalProps) => {
       {showModal && (
         <>
           <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-            <div className="relative w-auto my-6 mx-auto max-w-2xl">
+            <div className="relative w-auto mb-[9rem] mx-auto max-w-2xl">
               {/*content*/}
               <div className="rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none bg-main text-text">
                 {/*header*/}
@@ -84,6 +84,7 @@ export const Modal = ({ showModal, streak, onClick }: ModalProps) => {
                         type="submit"
                         isDisabled={name.length == 0}
                         isLoading={isLoading}
+                        className="mt-2"
                       />
                     </form>
                   )}

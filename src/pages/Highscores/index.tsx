@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import { Score } from '../../components/Score'
-import { Button } from '../../components/Button'
-import { getStorageName } from '../../utils/getStorageName'
 import { Link } from 'react-router-dom'
+import { Score } from '@components/Score'
+import { Button } from '@components/Button'
+import { getStorageName } from '@utils/getStorageName'
 import { supabase } from '../../services/supabaseClient'
 import { Highscore } from '../../types/highscore'
 
@@ -30,7 +30,7 @@ export const Highscores = () => {
         </Link>
       </div>
       <div className="w-96 bg-complementary rounded-xl">
-        <div className="w-full uppercase flex justify-around text-text p-4 mb-3 text-xl">
+        <div className="w-full uppercase flex justify-around text-text p-4 pb-2 text-xl">
           <h3 className="w-1/6 text-center">Pos</h3>
           <h3 className="w-2/6 text-center">Name</h3>
           <h3 className="w-1/3 text-center">Streak</h3>

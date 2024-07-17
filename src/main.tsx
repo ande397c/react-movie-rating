@@ -1,10 +1,10 @@
-import React from 'react'
 import './App.css'
+import React from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { createRoot } from 'react-dom/client'
 import App from './App'
 import { Game } from './pages/Game'
 import { Highscores } from './pages/Highscores'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { createRoot } from 'react-dom/client'
 
 createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
