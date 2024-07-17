@@ -3,6 +3,7 @@ module.exports = {
   theme: {
     colors: {
       main: '#232549',
+      complementary: '#191A38',
       text: '#f8f2ed',
       secondary: '#ffb65e',
       button: '#6a3a67',

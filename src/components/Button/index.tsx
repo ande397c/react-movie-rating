@@ -1,4 +1,5 @@
 import clsx from 'clsx'
+import { SpinnerIcon } from '../icons/SpinnerIcon'
 
 interface ButtonProps {
   text: string
@@ -19,7 +20,7 @@ export const Button = ({
   return (
     <button
       className={clsx({
-        'bg-button rounded-xl border-none h-10 text-center transition-all duration-150 hover:bg-hover w-40':
+        'bg-button text-text rounded-lg border-none h-10 text-center transition-all duration-150 hover:bg-hover w-40':
           true,
         [disabledClasses]: isDisabled || isLoading
       })}
@@ -27,7 +28,7 @@ export const Button = ({
       onClick={onClick}
       disabled={isDisabled || isLoading}
     >
-      {text}
+      {isLoading ? <SpinnerIcon /> : text}
     </button>
   )
 }

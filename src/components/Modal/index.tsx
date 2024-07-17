@@ -10,7 +10,8 @@ interface ModalProps {
 
 export const Modal = ({ showModal, streak, onClick }: ModalProps) => {
   const [name, setName] = useState<string>('')
-  const [isloading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
@@ -27,8 +28,10 @@ export const Modal = ({ showModal, streak, onClick }: ModalProps) => {
 
     if (error) {
       console.log(error)
+    } else {
+      setIsLoading(false)
+      setIsSubmitted(true)
     }
-    setIsLoading(false)
   }
   return (
     <>
@@ -48,26 +51,42 @@ export const Modal = ({ showModal, streak, onClick }: ModalProps) => {
 
                 {/*body*/}
                 <div className="px-6 mb-6">
-                  <p className="my-4">Want to register your score?</p>
-                  <form onSubmit={handleSubmit}>
-                    <label className="block" htmlFor="name">
-                      Name for the scoreboard
-                    </label>
-                    <input
-                      className="w-full h-8 rounded-md text-logoColor"
-                      name="name"
-                      type="text"
-                      placeholder="Name"
-                      onChange={(e) => {
-                        setName(e.target.value)
-                      }}
-                    />
-                    <Button
-                      text="Submit"
-                      type="submit"
-                      isDisabled={name.length == 0}
-                    />
-                  </form>
+                  {isSubmitted ? (
+                    <div className="text-center">
+                      <h4 className="my-4 text-lg">
+                        Thanks for submitting your streak
+                      </h4>
+                      <Link to="/highscores">
+                        <p className="text-secondary underline">
+                          Check out the highscores
+                        </p>
+                      </Link>
+                    </div>
+                  ) : (
+                    <form onSubmit={handleSubmit}>
+                      <h4 className="my-4 text-lg">
+                        Want to register your score?
+                      </h4>
+                      <label className="block" htmlFor="name">
+                        Name for the scoreboard
+                      </label>
+                      <input
+                        className="w-full h-8 rounded-md text-logoColor"
+                        name="name"
+                        type="text"
+                        placeholder="Name"
+                        onChange={(e) => {
+                          setName(e.target.value)
+                        }}
+                      />
+                      <Button
+                        text="Submit"
+                        type="submit"
+                        isDisabled={name.length == 0}
+                        isLoading={isLoading}
+                      />
+                    </form>
+                  )}
                   <div className="flex justify-center gap-8 mt-6">
                     <Link to="/">
                       <Button text="Front page" />

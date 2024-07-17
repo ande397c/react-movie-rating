@@ -25,7 +25,7 @@ const App = (): ReactElement => {
             game.
           </p>
 
-          <article className="flex justify-center">
+          <article className="flex justify-center gap-6">
             <Link to="/game">
               <Button text="Play" />
             </Link>

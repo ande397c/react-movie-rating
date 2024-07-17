@@ -55,7 +55,7 @@ export const Game = () => {
       </header>
       <div className="h-screen w-full flex justify-center items-center flex-col text-text">
         <h3 className="text-2xl mb-12">Which movie has the highest rating?</h3>
-        <div className="flex gap-4 items-center h-[23rem]">
+        <div className="flex gap-4 items-center h-[28rem]">
           <h4 className="text-2xl mb-12">OR</h4>
           {movies.map((movie, index) => (
             <Card
