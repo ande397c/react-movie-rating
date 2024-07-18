@@ -26,7 +26,7 @@ export const Highscores = () => {
       <h1 className="text-4xl text-text font-semibold">Highscores</h1>
       <div className="py-4 flex justify-center">
         <Link to="/">
-          <Button text="Go back" />
+          <Button text="Go back" width="fit" />
         </Link>
       </div>
       <div className="w-96 bg-complementary rounded-xl">

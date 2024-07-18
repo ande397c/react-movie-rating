@@ -5,9 +5,9 @@ import { Button } from '@components/Button'
 const App = (): ReactElement => {
   return (
     <div className="h-screen w-full flex justify-center items-start">
-      <div className="flex flex-col">
+      <div className="flex flex-col p-4">
         <article className="mt-12 text-center text-text">
-          <h1 className="text-4xl">
+          <h1 className="text-4xl leading-[3rem]">
             Welcome to the
             <span className="p-1 mx-2 bg-logoBg text-logoColor font-semibold rounded-lg">
               movie
@@ -19,18 +19,18 @@ const App = (): ReactElement => {
           </h2>
         </article>
         <section className="text-text my-auto max-w-prose">
-          <p className="leading-7 text-lg my-4 mb-6">
+          <p className="leading-7 text-lg my-4 mb-6 max-w-prose">
             Your goal is to guess the movie with the highest rating. Each
             correct guess counts towards your streak - a failed guess ends the
             game.
           </p>
 
-          <article className="flex justify-center gap-6">
-            <Link to="/game">
-              <Button text="Play" />
+          <article className="flex flex-col sm:flex-row justify-center gap-6">
+            <Link to="/highscores" className="w-full">
+              <Button text="View highscores" variant="secondary" />
             </Link>
-            <Link to="/highscores">
-              <Button text="View highscores" />
+            <Link to="/game" className="w-full">
+              <Button text="Play" />
             </Link>
           </article>
         </section>

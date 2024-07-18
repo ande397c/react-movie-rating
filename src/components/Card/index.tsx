@@ -25,11 +25,11 @@ export const Card = ({
     <div
       className={clsx(
         'el-container group flex justify-center flex-col items-center transition-all duration-150 hover:scale-110 cursor-pointer',
-        { 'scale-125': isSelected, 'pointer-events-none': clicked }
+        { 'scale-110 sm:scale-125': isSelected, 'pointer-events-none': clicked }
       )}
       onClick={onClick}
     >
-      <div className="w-[160px] h-full">
+      <div className="w-[120px] sm:w-[160px] h-full">
         <img
           src={fallbackImg ? MoviePoster : getQualityPoster(img)}
           className="rounded-sm max-w-full max-h-full"
@@ -38,7 +38,7 @@ export const Card = ({
           }}
         />
       </div>
-      <div className="text-center pt-4 text-xl overflow-hidden w-[260px]">
+      <div className="text-center pt-4 text-xl overflow-hidden max-w-[100px] sm:w-[260px] sm:max-w-xs">
         <h3 className="truncate group-hover:overflow-visible group-hover:whitespace-normal group-hover:text-clip">
           {title}
         </h3>

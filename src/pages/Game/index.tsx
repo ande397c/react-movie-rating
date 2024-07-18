@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState, KeyboardEvent } from 'react'
 import { Link } from 'react-router-dom'
 import { Card } from '@components/Card'
 import { Button } from '@components/Button'
@@ -16,6 +16,20 @@ export const Game = () => {
   const [selected, setSelected] = useState<number | null>(null)
   const [clicked, setClicked] = useState<boolean>(false)
   const [showModal, setShowModal] = useState<boolean>(false)
+
+  const handleKeyDown = (e: globalThis.KeyboardEvent) => {
+    if (e.key === ' ' || e.key === 'Enter') {
+      replaceMovies()
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [clicked])
 
   const handleClick = (movie: Movie, index: number) => {
     setSelected(index)
@@ -52,20 +66,20 @@ export const Game = () => {
 
   return (
     <>
-      <header className="p-4 px-12 text-text flex justify-between text-lg fixed w-full">
+      <header className="p-4 px-12 text-text flex justify-between items-center text-lg fixed w-full">
         {/* <h2 className="text-2xl">Category:</h2> */}
         <Link to="/">
-          <Button text="Go back" />
+          <Button text="Go back" width="fit" className="px-4" />
         </Link>
         <h2 className="text-2xl">
           Streak: <span className="text-secondary">{points}</span>
         </h2>
       </header>
       <div className="h-screen w-full flex justify-center items-center flex-col text-text">
-        <h3 className="text-2xl text-center">
+        <h3 className="text-3xl text-center mt-8 sm:mt-0">
           Which movie has the highest rating?
         </h3>
-        <div className="flex items-center h-[28rem] mt-5">
+        <div className="flex items-center h-[24rem] sm:h-[28rem] mt-5 gap-4 sm:gap-0">
           <h4 className="text-2xl mb-12">OR</h4>
           {movies.map((movie, index) => (
             <Card
@@ -83,6 +97,8 @@ export const Game = () => {
           text="Generate new pair"
           isDisabled={!clicked}
           onClick={replaceMovies}
+          width="fit"
+          className="px-4"
         />
       </div>
       <Modal showModal={showModal} streak={points} onClick={reset} />

@@ -24,6 +24,7 @@ export const Modal = ({ showModal, streak, onClick }: ModalProps) => {
     const { error } = await supabase
       .from('highscores')
       .insert({ name: name, highscore: streak })
+
     localStorage.setItem('name', name)
 
     if (error) {
@@ -38,7 +39,7 @@ export const Modal = ({ showModal, streak, onClick }: ModalProps) => {
       {showModal && (
         <>
           <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-            <div className="relative w-auto mb-[9rem] mx-auto max-w-2xl">
+            <div className="relative w-auto mb-[9rem] mx-auto min-w-[22rem] max-w-2xl">
               {/*content*/}
               <div className="rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none bg-main text-text">
                 {/*header*/}
@@ -64,11 +65,11 @@ export const Modal = ({ showModal, streak, onClick }: ModalProps) => {
                     </div>
                   ) : (
                     <form onSubmit={handleSubmit}>
-                      <h4 className="my-4 text-lg">
+                      <h4 className="mb-2 text-lg">
                         Want to register your score?
                       </h4>
                       <label className="block" htmlFor="name">
-                        Name for the scoreboard
+                        Scoreboard name
                       </label>
                       <input
                         className="w-full h-8 rounded-md text-logoColor"
@@ -85,12 +86,13 @@ export const Modal = ({ showModal, streak, onClick }: ModalProps) => {
                         isDisabled={name.length == 0}
                         isLoading={isLoading}
                         className="mt-2"
+                        width="fit"
                       />
                     </form>
                   )}
-                  <div className="flex justify-center gap-8 mt-6">
-                    <Link to="/">
-                      <Button text="Front page" />
+                  <div className="flex flex-col sm:flex-row gap-2 mt-6">
+                    <Link to="/" className="w-full">
+                      <Button text="Front page" variant="secondary" />
                     </Link>
                     <Button text="Play again" onClick={onClick} />
                   </div>
