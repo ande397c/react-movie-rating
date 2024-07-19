@@ -1,4 +1,4 @@
-import { useEffect, useState, KeyboardEvent } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Card } from '@components/Card'
 import { Button } from '@components/Button'
@@ -80,7 +80,7 @@ export const Game = () => {
           Which movie has the highest rating?
         </h3>
         <div className="flex items-center h-[24rem] sm:h-[28rem] mt-5 gap-4 sm:gap-0">
-          <h4 className="text-2xl mb-12">OR</h4>
+          <h4 className="text-lg sm:text-2xl mb-12">OR</h4>
           {movies.map((movie, index) => (
             <Card
               key={movie.id}

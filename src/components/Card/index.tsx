@@ -25,7 +25,7 @@ export const Card = ({
     <div
       className={clsx(
         'el-container group flex justify-center flex-col items-center transition-all duration-150 hover:scale-110 cursor-pointer',
-        { 'scale-110 sm:scale-125': isSelected, 'pointer-events-none': clicked }
+        { 'scale-105 sm:scale-125': isSelected, 'pointer-events-none': clicked }
       )}
       onClick={onClick}
     >
@@ -39,13 +39,13 @@ export const Card = ({
         />
       </div>
       <div className="text-center pt-4 text-xl overflow-hidden max-w-[100px] sm:w-[260px] sm:max-w-xs">
-        <h3 className="truncate group-hover:overflow-visible group-hover:whitespace-normal group-hover:text-clip">
+        <h3 className="truncate overflow-visible whitespace-normal sm:group-hover:overflow-visible text-clip sm:group-hover:whitespace-normal sm:group-hover:text-clip text-base sm:text-lg">
           {title}
         </h3>
       </div>
-      <div className="mt-4 text-[1.3rem] text-center">
+      <div className="mt-4 text-secondary text-base sm:text-[1.3rem] text-center">
         <p
-          className={clsx('text-secondary', {
+          className={clsx({
             visible: clicked,
             invisible: !clicked
           })}
