@@ -304,22 +304,6 @@ export const moviesData = [
     rating: 8.5
   },
   {
-    id: 51,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BY2IzZGY2YmEtYzljNS00NTM5LTgwMzUtMzM1NjQ4NGI0OTk0XkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '1942',
-    title: 'Casablanca',
-    rating: 8.5
-  },
-  {
-    id: 55,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BNWJhMDlmZGUtYzcxNS00NDRiLWIwNjktNDY1Mjg3ZjBkYzY0XkEyXkFqcGdeQXVyMTU4MjUwMjI@._V1_UY98_CR2,0,67,98_AL_.jpg',
-    release_date: '2017',
-    title: 'Ayla: The Daughter of War',
-    rating: 8.4
-  },
-  {
     id: 59,
     poster_path:
       'https://m.media-amazon.com/images/M/MV5BMjMwNDkxMTgzOF5BMl5BanBnXkFtZTgwNTkwNTQ3NjM@._V1_UX67_CR0,0,67,98_AL_.jpg',
@@ -464,27 +448,11 @@ export const moviesData = [
     rating: 8.3
   },
   {
-    id: 88,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BYmY3MzYwMGUtOWMxYS00OGVhLWFjNmUtYzlkNGVmY2ZkMjA3XkEyXkFqcGdeQXVyMTExNDQ2MTI@._V1_UY98_CR4,0,67,98_AL_.jpg',
-    release_date: '2013',
-    title: 'Drishyam',
-    rating: 8.3
-  },
-  {
     id: 89,
     poster_path:
       'https://m.media-amazon.com/images/M/MV5BMTg2NDg3ODg4NF5BMl5BanBnXkFtZTcwNzk3NTc3Nw@@._V1_UY98_CR1,0,67,98_AL_.jpg',
     release_date: '2012',
     title: 'The Hunt',
-    rating: 8.3
-  },
-  {
-    id: 91,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMWE3MGYzZjktY2Q5Mi00Y2NiLWIyYWUtMmIyNzA3YmZlMGFhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2010',
-    title: 'Incendies',
     rating: 8.3
   },
   {
@@ -576,14 +544,6 @@ export const moviesData = [
     rating: 8.3
   },
   {
-    id: 108,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BNWJlNzUzNGMtYTAwMS00ZjI2LWFmNWQtODcxNWUxODA5YmU1XkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '1984',
-    title: 'Amadeus',
-    rating: 8.3
-  },
-  {
     id: 109,
     poster_path:
       'https://m.media-amazon.com/images/M/MV5BNjdjNGQ4NDEtNTEwYS00MTgxLTliYzQtYzE2ZDRiZjFhZmNlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX67_CR0,0,67,98_AL_.jpg',
@@ -664,14 +624,6 @@ export const moviesData = [
     rating: 8.3
   },
   {
-    id: 121,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BZDRjNGViMjQtOThlMi00MTA3LThkYzQtNzJkYjBkMGE0YzE1XkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_UY98_CR0,0,67,98_AL_.jpg',
-    release_date: '1952',
-    title: "Singin' in the Rain",
-    rating: 8.3
-  },
-  {
     id: 125,
     poster_path:
       'https://m.media-amazon.com/images/M/MV5BYjBiOTYxZWItMzdiZi00NjlkLWIzZTYtYmFhZjhiMTljOTdkXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX67_CR0,0,67,98_AL_.jpg',
@@ -736,43 +688,11 @@ export const moviesData = [
     rating: 8.2
   },
   {
-    id: 153,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BOTI5ODc3NzExNV5BMl5BanBnXkFtZTcwNzYxNzQzMw@@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2005',
-    title: 'V for Vendetta',
-    rating: 8.2
-  },
-  {
-    id: 156,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BOTY4YjI2N2MtYmFlMC00ZjcyLTg3YjEtMDQyM2ZjYzQ5YWFkXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2005',
-    title: 'Batman Begins',
-    rating: 8.2
-  },
-  {
-    id: 158,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMTU0NTU5NTAyMl5BMl5BanBnXkFtZTYwNzYwMDg2._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2004',
-    title: 'Downfall',
-    rating: 8.2
-  },
-  {
     id: 160,
     poster_path:
       'https://m.media-amazon.com/images/M/MV5BMzcwYWFkYzktZjAzNC00OGY1LWI4YTgtNzc5MzVjMDVmNjY0XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX67_CR0,0,67,98_AL_.jpg',
     release_date: '2001',
     title: 'A Beautiful Mind',
-    rating: 8.2
-  },
-  {
-    id: 162,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMTAyN2JmZmEtNjAyMy00NzYwLThmY2MtYWQ3OGNhNjExMmM4XkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '1998',
-    title: 'Lock, Stock and Two Smoking Barrels',
     rating: 8.2
   },
   {
@@ -832,76 +752,12 @@ export const moviesData = [
     rating: 8.2
   },
   {
-    id: 175,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMDgwODNmMGItMDcwYi00OWZjLTgyZjAtMGYwMmI4N2Q0NmJmXkEyXkFqcGdeQXVyNzY1MTU0Njk@._V1_UY98_CR1,0,67,98_AL_.jpg',
-    release_date: '1979',
-    title: 'Stalker',
-    rating: 8.2
-  },
-  {
-    id: 179,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BN2IyNTE4YzUtZWU0Mi00MGIwLTgyMmQtMzQ4YzQxYWNlYWE2XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '1975',
-    title: 'Monty Python and the Holy Grail',
-    rating: 8.2
-  },
-  {
-    id: 180,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BNzA2NmYxMWUtNzBlMC00MWM2LTkwNmQtYTFlZjQwODNhOWE0XkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '1963',
-    title: 'The Great Escape',
-    rating: 8.2
-  },
-  {
     id: 181,
     poster_path:
       'https://m.media-amazon.com/images/M/MV5BNmVmYzcwNzMtMWM1NS00MWIyLThlMDEtYzUwZDgzODE1NmE2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX67_CR0,0,67,98_AL_.jpg',
     release_date: '1962',
     title: 'To Kill a Mockingbird',
     rating: 8.2
-  },
-  {
-    id: 183,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BNDc2ODQ5NTE2MV5BMl5BanBnXkFtZTcwODExMjUyNA@@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '1961',
-    title: 'Judgment at Nuremberg',
-    rating: 8.2
-  },
-  {
-    id: 188,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BOWIwODIxYWItZDI4MS00YzhhLWE3MmYtMzlhZDIwOTMzZmE5L2ltYWdlXkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '1954',
-    title: 'Dial M for Murder',
-    rating: 8.2
-  },
-  {
-    id: 191,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMTY2MTAzODI5NV5BMl5BanBnXkFtZTgwMjM4NzQ0MjE@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '1950',
-    title: 'All About Eve',
-    rating: 8.2
-  },
-  {
-    id: 195,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BZWFhOGU5NDctY2Q3YS00Y2VlLWI1NzEtZmIwY2ZiZjY4OTA2XkEyXkFqcGdeQXVyMDI2NDg0NQ@@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '1924',
-    title: 'Sherlock Jr.',
-    rating: 8.2
-  },
-  {
-    id: 201,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMGI3YWFmNDQtNjc0Ny00ZDBjLThlNjYtZTc1ZTk5MzU2YTVjXkEyXkFqcGdeQXVyNzA4ODc3ODU@._V1_UY98_CR1,0,67,98_AL_.jpg',
-    release_date: '2014',
-    title: 'Mommy',
-    rating: 8.1
   },
   {
     id: 203,
@@ -1005,38 +861,6 @@ export const moviesData = [
       'https://m.media-amazon.com/images/M/MV5BN2EwM2I5OWMtMGQyMi00Zjg1LWJkNTctZTdjYTA4OGUwZjMyXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX67_CR0,0,67,98_AL_.jpg',
     release_date: '2015',
     title: 'Mad Max: Fury Road',
-    rating: 8.1
-  },
-  {
-    id: 225,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BOTcwMzdiMWItMjZlOS00MzAzLTg5OTItNTA4OGYyMjBhMmRiXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_UY98_CR1,0,67,98_AL_.jpg',
-    release_date: '2008',
-    title: 'A Wednesday',
-    rating: 8.1
-  },
-  {
-    id: 226,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMTc5NTk2OTU1Nl5BMl5BanBnXkFtZTcwMDc3NjAwMg@@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2008',
-    title: 'Gran Torino',
-    rating: 8.1
-  },
-  {
-    id: 227,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMGVmMWNiMDktYjQ0Mi00MWIxLTk0N2UtN2ZlYTdkN2IzNDNlXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2011',
-    title: 'Harry Potter and the Deathly Hallows: Part 2',
-    rating: 8.1
-  },
-  {
-    id: 230,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMDgzYjQwMDMtNGUzYi00MTRmLWIyMGMtNjE1OGZkNzY2YWIzL2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UY98_CR1,0,67,98_AL_.jpg',
-    release_date: '2009',
-    title: 'Mary and Max',
     rating: 8.1
   },
   {
@@ -1184,27 +1008,11 @@ export const moviesData = [
     rating: 8.1
   },
   {
-    id: 264,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMmYyOTgwYWItYmU3Ny00M2E2LTk0NWMtMDVlNmQ0MWZiMTMxXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '1993',
-    title: 'In the Name of the Father',
-    rating: 8.1
-  },
-  {
     id: 267,
     poster_path:
       'https://m.media-amazon.com/images/M/MV5BOGYwYWNjMzgtNGU4ZC00NWQ2LWEwZjUtMzE1Zjc3NjY3YTU1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX67_CR0,0,67,98_AL_.jpg',
     release_date: '1989',
     title: 'Dead Poets Society',
-    rating: 8.1
-  },
-  {
-    id: 268,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BODJmY2Y2OGQtMDg2My00N2Q3LWJmZTUtYTc2ODBjZDVlNDlhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '1986',
-    title: 'Stand by Me',
     rating: 8.1
   },
   {
@@ -1224,35 +1032,11 @@ export const moviesData = [
     rating: 8.1
   },
   {
-    id: 274,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BYjIzNTYxMTctZjAwNS00YzI3LWExMGMtMGQxNGM5ZTc1NzhlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '1982',
-    title: 'Fitzcarraldo',
-    rating: 8.1
-  },
-  {
     id: 276,
     poster_path:
       'https://m.media-amazon.com/images/M/MV5BNzQzMzJhZTEtOWM4NS00MTdhLTg0YjgtMjM4MDRkZjUwZDBlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX67_CR0,0,67,98_AL_.jpg',
     release_date: '1982',
     title: 'Blade Runner',
-    rating: 8.1
-  },
-  {
-    id: 277,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMDVjNjIwOGItNDE3Ny00OThjLWE0NzQtZTU3YjMzZTZjMzhkXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '1980',
-    title: 'The Elephant Man',
-    rating: 8.1
-  },
-  {
-    id: 278,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMzAwNjU1OTktYjY3Mi00NDY5LWFlZWUtZjhjNGE0OTkwZDkwXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '1979',
-    title: 'Life of Brian',
     rating: 8.1
   },
   {
@@ -1272,35 +1056,11 @@ export const moviesData = [
     rating: 8.1
   },
   {
-    id: 281,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BZGNjYjM2MzItZGQzZi00NmY3LTgxOGUtMTQ2MWQxNWQ2MmMwXkEyXkFqcGdeQXVyNzM0MTUwNTY@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '1976',
-    title: 'Network',
-    rating: 8.1
-  },
-  {
-    id: 284,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BOGMwYmY5ZmEtMzY1Yi00OWJiLTk1Y2MtMzI2MjBhYmZkNTQ0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '1974',
-    title: 'Chinatown',
-    rating: 8.1
-  },
-  {
     id: 328,
     poster_path:
       'https://m.media-amazon.com/images/M/MV5BMzUzNDM2NzM2MV5BMl5BanBnXkFtZTgwNTM3NTg4OTE@._V1_UX67_CR0,0,67,98_AL_.jpg',
     release_date: '2016',
     title: 'La La Land',
-    rating: 8.0
-  },
-  {
-    id: 329,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMjA3NjkzNjg2MF5BMl5BanBnXkFtZTgwMDkyMzgzMDI@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2016',
-    title: 'Lion',
     rating: 8.0
   },
   {
@@ -1344,14 +1104,6 @@ export const moviesData = [
     rating: 8.0
   },
   {
-    id: 342,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMjA1Nzk0OTM2OF5BMl5BanBnXkFtZTgwNjU2NjEwMDE@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2013',
-    title: 'Her',
-    rating: 8.0
-  },
-  {
     id: 343,
     poster_path:
       'https://m.media-amazon.com/images/M/MV5BMTA2NDc3Njg5NDVeQTJeQWpwZ15BbWU4MDc1NDcxNTUz._V1_UX67_CR0,0,67,98_AL_.jpg',
@@ -1384,14 +1136,6 @@ export const moviesData = [
     rating: 8.0
   },
   {
-    id: 348,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMTM5OTMyMjIxOV5BMl5BanBnXkFtZTcwNzU4MjIwNQ@@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2011',
-    title: 'The Help',
-    rating: 8.0
-  },
-  {
     id: 349,
     poster_path:
       'https://m.media-amazon.com/images/M/MV5BYzE5MjY1ZDgtMTkyNC00MTMyLThhMjAtZGI5OTE1NzFlZGJjXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX67_CR0,0,67,98_AL_.jpg',
@@ -1413,14 +1157,6 @@ export const moviesData = [
       'https://m.media-amazon.com/images/M/MV5BNzY2NzI4OTE5MF5BMl5BanBnXkFtZTcwMjMyNDY4Mw@@._V1_UX67_CR0,0,67,98_AL_.jpg',
     release_date: '2010',
     title: 'Black Swan',
-    rating: 8.0
-  },
-  {
-    id: 357,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BYmI1ODU5ZjMtNWUyNC00YzllLThjNzktODE1M2E4OTVmY2E5XkEyXkFqcGdeQXVyMTExNzQzMDE0._V1_UY98_CR1,0,67,98_AL_.jpg',
-    release_date: '2007',
-    title: 'Tropa de Elite',
     rating: 8.0
   },
   {
@@ -1504,14 +1240,6 @@ export const moviesData = [
     rating: 8.0
   },
   {
-    id: 374,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BODEyYmQxZjUtZGQ0NS00ZTAwLTkwOGQtNGY2NzEwMWE0MDc3XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2005',
-    title: 'Cinderella Man',
-    rating: 8.0
-  },
-  {
     id: 377,
     poster_path:
       'https://m.media-amazon.com/images/M/MV5BNGYyZGM5MGMtYTY2Ni00M2Y1LWIzNjQtYWUzM2VlNGVhMDNhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX67_CR0,0,67,98_AL_.jpg',
@@ -1528,207 +1256,6 @@ export const moviesData = [
     rating: 8.0
   },
   {
-    id: 379,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMTY5OTU0OTc2NV5BMl5BanBnXkFtZTcwMzU4MDcyMQ@@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2004',
-    title: 'The Incredibles',
-    rating: 8.0
-  },
-  {
-    id: 390,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMjIxNDU2Njk0OV5BMl5BanBnXkFtZTgwODc3Njc3NjE@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '1999',
-    title: 'The Iron Giant',
-    rating: 8.0
-  },
-  {
-    id: 393,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BY2QzMTIxNjItNGQyNy00MjQzLWJiYTItMzIyZjdkYjYyYjRlXkEyXkFqcGdeQXVyMTAwMzUyOTc@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '1996',
-    title: 'Secrets & Lies',
-    rating: 8.0
-  },
-  {
-    id: 394,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BN2Y2OWU4MWMtNmIyMy00YzMyLWI0Y2ItMTcyZDc3MTdmZDU4XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '1995',
-    title: 'Twelve Monkeys',
-    rating: 8.0
-  },
-  {
-    id: 399,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BZTM3ZjA3NTctZThkYy00ODYyLTk2ZjItZmE0MmZlMTk3YjQwXkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '1992',
-    title: 'Scent of a Woman',
-    rating: 8.0
-  },
-  {
-    id: 400,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BY2Q2NDI1MjUtM2Q5ZS00MTFlLWJiYWEtNTZmNjQ3OGJkZDgxXkEyXkFqcGdeQXVyNTI4MjkwNjA@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '1992',
-    title: 'Aladdin',
-    rating: 8.0
-  },
-  {
-    id: 401,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BYjYyODExMDctZjgwYy00ZjQwLWI4OWYtOGFlYjA4ZjEzNmY1XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '1991',
-    title: 'JFK',
-    rating: 8.0
-  },
-  {
-    id: 402,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMzE5MDM1NDktY2I0OC00YWI5LTk2NzUtYjczNDczOWQxYjM0XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '1991',
-    title: 'Beauty and the Beast',
-    rating: 8.0
-  },
-  {
-    id: 403,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMTY3OTI5NDczN15BMl5BanBnXkFtZTcwNDA0NDY3Mw@@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '1990',
-    title: 'Dances with Wolves',
-    rating: 8.0
-  },
-  {
-    id: 405,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMzVjNzI4NzYtMjE4NS00M2IzLWFkOWMtOTYwMWUzN2ZlNGVjL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '1988',
-    title: 'Rain Man',
-    rating: 8.0
-  },
-  {
-    id: 407,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMGM4M2Q5N2MtNThkZS00NTc1LTk1NTItNWEyZjJjNDRmNDk5XkEyXkFqcGdeQXVyMjA0MDQ0Mjc@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '1987',
-    title: 'The Princess Bride',
-    rating: 8.0
-  },
-  {
-    id: 411,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BYTViNzMxZjEtZGEwNy00MDNiLWIzNGQtZDY2MjQ1OWViZjFmXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '1984',
-    title: 'The Terminator',
-    rating: 8.0
-  },
-  {
-    id: 416,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMmVmODY1MzEtYTMwZC00MzNhLWFkNDMtZjAwM2EwODUxZTA5XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '1975',
-    title: 'Jaws',
-    rating: 8.0
-  },
-  {
-    id: 420,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BYjhmMGMxZDYtMTkyNy00YWVmLTgyYmUtYTU3ZjcwNTBjN2I1XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '1973',
-    title: 'The Exorcist',
-    rating: 8.0
-  },
-  {
-    id: 427,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMTg0NjUwMzg5NF5BMl5BanBnXkFtZTgwNDQ0NjcwMTE@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '1968',
-    title: 'Planet of the Apes',
-    rating: 8.0
-  },
-  {
-    id: 462,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMzg2MWQ4MDEtOGZlNi00MTg0LWIwMjQtYWY5NTQwYmUzMWNmXkEyXkFqcGdeQXVyMzg2MzE2OTE@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '1930',
-    title: 'All Quiet on the Western Front',
-    rating: 8.0
-  },
-  {
-    id: 464,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMGUwZjliMTAtNzAxZi00MWNiLWE2NzgtZGUxMGQxZjhhNDRiXkEyXkFqcGdeQXVyNjU1NzU3MzE@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2019',
-    title: 'Knives Out',
-    rating: 7.9
-  },
-  {
-    id: 475,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BN2U1YzdhYWMtZWUzMi00OWI1LWFkM2ItNWVjM2YxMGQ2MmNhXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UY98_CR0,0,67,98_AL_.jpg',
-    release_date: '2014',
-    title: 'Nightcrawler',
-    rating: 7.9
-  },
-  {
-    id: 476,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BZjU0Yzk2MzEtMjAzYy00MzY0LTg2YmItM2RkNzdkY2ZhN2JkXkEyXkFqcGdeQXVyNDg4NjY5OTQ@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2019',
-    title: 'Jojo Rabbit',
-    rating: 7.9
-  },
-  {
-    id: 477,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMTExMzU0ODcxNDheQTJeQWpwZ15BbWU4MDE1OTI4MzAy._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2016',
-    title: 'Arrival',
-    rating: 7.9
-  },
-  {
-    id: 478,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BOTAzODEzNDAzMl5BMl5BanBnXkFtZTgwMDU1MTgzNzE@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2015',
-    title: 'Star Wars: Episode VII - The Force Awakens',
-    rating: 7.9
-  },
-  {
-    id: 480,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BZGIzNWYzN2YtMjcwYS00YjQ3LWI2NjMtOTNiYTUyYjE2MGNkXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2014',
-    title: 'X-Men: Days of Future Past',
-    rating: 7.9
-  },
-  {
-    id: 485,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMGUyM2ZiZmUtMWY0OC00NTQ4LThkOGUtNjY2NjkzMDJiMWMwXkEyXkFqcGdeQXVyMzY0MTE3NzU@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2019',
-    title: 'The Irishman',
-    rating: 7.9
-  },
-  {
-    id: 489,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BYmQ5MzFjYWMtMTMwNC00ZGU5LWI3YTQtYzhkMGExNGFlY2Q0XkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2009',
-    title: 'District 9',
-    rating: 7.9
-  },
-  {
-    id: 494,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMjE5NDQ5OTE4Ml5BMl5BanBnXkFtZTcwOTE3NDIzMw@@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2009',
-    title: 'Star Trek',
-    rating: 7.9
-  },
-  {
-    id: 495,
     poster_path:
       'https://m.media-amazon.com/images/M/MV5BMTUwOGFiM2QtOWMxYS00MjU2LThmZDMtZDM2MWMzNzllNjdhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX67_CR0,0,67,98_AL_.jpg',
     release_date: '2008',
@@ -1829,14 +1356,6 @@ export const moviesData = [
       'https://m.media-amazon.com/images/M/MV5BNDUxN2I5NDUtZjdlMC00NjlmLTg0OTQtNjk0NjAxZjFmZTUzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX67_CR0,0,67,98_AL_.jpg',
     release_date: '1990',
     title: 'Edward Scissorhands',
-    rating: 7.9
-  },
-  {
-    id: 528,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BYTVjYWJmMWQtYWU4Ni00MWY3LWI2YmMtNTI5MDE0MWVmMmEzL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '1987',
-    title: 'The Untouchables',
     rating: 7.9
   },
   {
@@ -2024,22 +1543,6 @@ export const moviesData = [
     rating: 7.8
   },
   {
-    id: 623,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMjFmZGI2YTEtYmJhMS00YTE5LWJjNjAtNDI5OGY5ZDhmNTRlXkEyXkFqcGdeQXVyODAwMTU1MTE@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2007',
-    title: 'American Gangster',
-    rating: 7.8
-  },
-  {
-    id: 624,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2009',
-    title: 'Avatar',
-    rating: 7.8
-  },
-  {
     id: 626,
     poster_path:
       'https://m.media-amazon.com/images/M/MV5BMzhmNGMzMDMtZDM0Yi00MmVmLWExYjAtZDhjZjcxZDM0MzJhXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX67_CR0,0,67,98_AL_.jpg',
@@ -2141,30 +1644,6 @@ export const moviesData = [
       'https://m.media-amazon.com/images/M/MV5BMjUxMDQwNjcyNl5BMl5BanBnXkFtZTgwNzcwMzc0MTI@._V1_UX67_CR0,0,67,98_AL_.jpg',
     release_date: '2017',
     title: 'Get Out',
-    rating: 7.7
-  },
-  {
-    id: 726,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BNjRlZmM0ODktY2RjNS00ZDdjLWJhZGYtNDljNWZkMGM5MTg0XkEyXkFqcGdeQXVyNjAwMjI5MDk@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2018',
-    title: 'Mission: Impossible - Fallout',
-    rating: 7.7
-  },
-  {
-    id: 730,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMTAwMTU4MDA3NDNeQTJeQWpwZ15BbWU4MDk4NTMxNTIx._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2014',
-    title: 'The Theory of Everything',
-    rating: 7.7
-  },
-  {
-    id: 731,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BYTM3ZTllNzItNTNmOS00NzJiLTg1MWMtMjMxNDc0NmJhODU5XkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2014',
-    title: 'Kingsman: The Secret Service',
     rating: 7.7
   },
   {
@@ -2296,94 +1775,6 @@ export const moviesData = [
     rating: 7.7
   },
   {
-    id: 769,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BZjczMWI1YWMtYTZjOS00ZDc5LWE2MWItMTY3ZGUxNzFkNjJmL2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2006',
-    title: 'Lucky Number Slevin',
-    rating: 7.7
-  },
-  {
-    id: 774,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMTY5NTAzNTc1NF5BMl5BanBnXkFtZTYwNDY4MDc3._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2005',
-    title: 'Brokeback Mountain',
-    rating: 7.7
-  },
-  {
-    id: 781,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMTI2NDI5ODk4N15BMl5BanBnXkFtZTYwMTI3NTE3._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2003',
-    title: 'Lost in Translation',
-    rating: 7.7
-  },
-  {
-    id: 782,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMTI1NDMyMjExOF5BMl5BanBnXkFtZTcwOTc4MjQzMQ@@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2005',
-    title: 'Harry Potter and the Goblet of Fire',
-    rating: 7.7
-  },
-  {
-    id: 783,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BODFlMmEwMDgtYjhmZi00ZTE5LTk2NWQtMWE1Y2M0NjkzOGYxXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2004',
-    title: 'Man on Fire',
-    rating: 7.7
-  },
-  {
-    id: 785,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMzkyNzQ1Mzc0NV5BMl5BanBnXkFtZTcwODg3MzUzMw@@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2003',
-    title: 'The Last Samurai',
-    rating: 7.7
-  },
-  {
-    id: 791,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BYWMwMzQxZjQtODM1YS00YmFiLTk1YjQtNzNiYWY1MDE4NTdiXkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2001',
-    title: 'Black Hawk Down',
-    rating: 7.7
-  },
-  {
-    id: 792,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BNjcxMmQ0MmItYTkzYy00MmUyLTlhOTQtMmJmNjE3MDMwYjdlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2002',
-    title: 'Road to Perdition',
-    rating: 7.7
-  },
-  {
-    id: 796,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BYzVmYzVkMmUtOGRhMi00MTNmLThlMmUtZTljYjlkMjNkMjJkXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2001',
-    title: "Ocean's Eleven",
-    rating: 7.7
-  },
-  {
-    id: 803,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMDZkMTUxYWEtMDY5NS00ZTA5LTg3MTItNTlkZWE1YWRjYjMwL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2001',
-    title: 'Training Day',
-    rating: 7.7
-  },
-  {
-    id: 889,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMjM3MjQ1MzkxNl5BMl5BanBnXkFtZTgwODk1ODgyMjI@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2017',
-    title: 'Baby Driver',
-    rating: 7.6
-  },
-  {
     id: 891,
     poster_path:
       'https://m.media-amazon.com/images/M/MV5BMjIxOTI0MjU5NV5BMl5BanBnXkFtZTgwNzM4OTk4NTE@._V1_UX67_CR0,0,67,98_AL_.jpg',
@@ -2416,126 +1807,6 @@ export const moviesData = [
     rating: 7.6
   },
   {
-    id: 895,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BNmZkYjQzY2QtNjdkNC00YjkzLTk5NjUtY2MyNDNiYTBhN2M2XkEyXkFqcGdeQXVyMjMwNDgzNjc@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2015',
-    title: 'Creed',
-    rating: 7.6
-  },
-  {
-    id: 899,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMTgwODk3NDc1N15BMl5BanBnXkFtZTgwNTc1NjQwMjE@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2014',
-    title: 'Dawn of the Planet of the Apes',
-    rating: 7.6
-  },
-  {
-    id: 902,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMjMxNjU0ODU5Ml5BMl5BanBnXkFtZTcwNjI4MzAyOA@@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2012',
-    title: 'End of Watch',
-    rating: 7.6
-  },
-  {
-    id: 904,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BNmE5ZmE3OGItNTdlNC00YmMxLWEzNjctYzAwOGQ5ODg0OTI0XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2018',
-    title: 'A Star Is Born',
-    rating: 7.6
-  },
-  {
-    id: 909,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMTMzNzEzMDYxM15BMl5BanBnXkFtZTcwMTc0NTMxMw@@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2010',
-    title: 'Kick-Ass',
-    rating: 7.6
-  },
-  {
-    id: 911,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMjAxOTU3Mzc1M15BMl5BanBnXkFtZTcwMzk1ODUzNg@@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2011',
-    title: 'Moneyball',
-    rating: 7.6
-  },
-  {
-    id: 913,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMTU5MDg0NTQ1N15BMl5BanBnXkFtZTcwMjA4Mjg3Mg@@._V1_UY98_CR1,0,67,98_AL_.jpg',
-    release_date: '2009',
-    title: 'Zombieland',
-    rating: 7.6
-  },
-  {
-    id: 915,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMTg0NjEwNjUxM15BMl5BanBnXkFtZTcwMzk0MjQ5Mg@@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2009',
-    title: 'Sherlock Holmes',
-    rating: 7.6
-  },
-  {
-    id: 916,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMjEzOTE3ODM3OF5BMl5BanBnXkFtZTcwMzYyODI4Mg@@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2009',
-    title: 'The Blind Side',
-    rating: 7.6
-  },
-  {
-    id: 918,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMTU0NzY0MTY5OF5BMl5BanBnXkFtZTcwODY3MDEwMg@@._V1_UY98_CR3,0,67,98_AL_.jpg',
-    release_date: '2008',
-    title: 'Seven Pounds',
-    rating: 7.6
-  },
-  {
-    id: 931,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BY2IzNGNiODgtOWYzOS00OTI0LTgxZTUtOTA5OTQ5YmI3NGUzXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2009',
-    title: 'Watchmen',
-    rating: 7.6
-  },
-  {
-    id: 932,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMTYzZWE3MDAtZjZkMi00MzhlLTlhZDUtNmI2Zjg3OWVlZWI0XkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2005',
-    title: 'Lord of War',
-    rating: 7.6
-  },
-  {
-    id: 933,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BMzQ2ZTBhNmEtZDBmYi00ODU0LTgzZmQtNmMxM2M4NzM1ZjE4XkEyXkFqcGdeQXVyNjE5MjUyOTM@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2004',
-    title: 'Saw',
-    rating: 7.6
-  },
-  {
-    id: 944,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BYTFkM2ViMmQtZmI5NS00MjQ2LWEyN2EtMTI1ZmNlZDU3MTZjXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2002',
-    title: '28 Days Later...',
-    rating: 7.6
-  },
-  {
-    id: 951,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BYWFlY2E3ODQtZWNiNi00ZGU4LTkzNWEtZTQ2ZTViMWRhYjIzL2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '2001',
-    title: 'Enemy at the Gates',
-    rating: 7.6
-  },
-  {
     id: 952,
     poster_path:
       'https://m.media-amazon.com/images/M/MV5BZTI3YzZjZjEtMDdjOC00OWVjLTk0YmYtYzI2MGMwZjFiMzBlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX67_CR0,0,67,98_AL_.jpg',
@@ -2565,14 +1836,6 @@ export const moviesData = [
       'https://m.media-amazon.com/images/M/MV5BYjEzMTM2NjAtNWFmZC00MTVlLTgyMmQtMGQyNTFjZDk5N2NmXkEyXkFqcGdeQXVyNzQ1ODk3MTQ@._V1_UX67_CR0,0,67,98_AL_.jpg',
     release_date: '1998',
     title: 'The Thin Red Line',
-    rating: 7.6
-  },
-  {
-    id: 957,
-    poster_path:
-      'https://m.media-amazon.com/images/M/MV5BODkxNGQ1NWYtNzg0Ny00Yjg3LThmZTItMjE2YjhmZTQ0ODY5XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX67_CR0,0,67,98_AL_.jpg',
-    release_date: '1998',
-    title: 'Mulan',
     rating: 7.6
   },
   {
