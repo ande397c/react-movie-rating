@@ -17,7 +17,7 @@ export const Modal = ({ showModal, streak, onClick }: ModalProps) => {
     e.preventDefault()
     setIsLoading(true)
 
-    if (name.length == 0) {
+    if (name.length == 0 || name.length > 20) {
       return
     }
 
@@ -25,7 +25,7 @@ export const Modal = ({ showModal, streak, onClick }: ModalProps) => {
       .from('highscores')
       .insert({ name: name, highscore: streak })
 
-    localStorage.setItem('name', name)
+    // localStorage.setItem('name', name)
 
     if (error) {
       console.log(error)
@@ -83,7 +83,7 @@ export const Modal = ({ showModal, streak, onClick }: ModalProps) => {
                       <Button
                         text="Submit"
                         type="submit"
-                        isDisabled={name.length == 0}
+                        isDisabled={name.length == 0 || name.length > 20}
                         isLoading={isLoading}
                         className="mt-2"
                         width="fit"

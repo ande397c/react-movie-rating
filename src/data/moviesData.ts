@@ -1,4 +1,6 @@
-export const moviesData = [
+import { Movie } from '@/types/movie'
+
+export const moviesData: Movie[] = [
   {
     id: 1,
     poster_path:
@@ -1256,6 +1258,7 @@ export const moviesData = [
     rating: 8.0
   },
   {
+    id: 379,
     poster_path:
       'https://m.media-amazon.com/images/M/MV5BMTUwOGFiM2QtOWMxYS00MjU2LThmZDMtZDM2MWMzNzllNjdhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX67_CR0,0,67,98_AL_.jpg',
     release_date: '2008',

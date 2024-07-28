@@ -43,7 +43,7 @@ export const Highscores = () => {
                 pos={index + 1}
                 name={highscore.name}
                 streak={highscore.highscore}
-                isOwnScore={getStorageName() === highscore.name}
+                // isOwnScore={getStorageName() === highscore.name}
               />
             ))}
           </div>

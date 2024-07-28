@@ -17,7 +17,7 @@ export const Game = () => {
   const [clicked, setClicked] = useState<boolean>(false)
   const [showModal, setShowModal] = useState<boolean>(false)
 
-  const handleKeyDown = (e: globalThis.KeyboardEvent) => {
+  const handleKeyDown = (e: KeyboardEvent) => {
     if (e.key === ' ' || e.key === 'Enter') {
       replaceMovies()
     }
@@ -66,7 +66,7 @@ export const Game = () => {
 
   return (
     <>
-      <header className="p-4 px-12 text-text flex justify-between items-center text-lg fixed w-full">
+      <header className="p-4 sm:px-12 px-4 text-text flex justify-between items-center text-lg fixed w-full">
         {/* <h2 className="text-2xl">Category:</h2> */}
         <Link to="/">
           <Button text="Go back" width="fit" className="px-4" />
@@ -94,11 +94,11 @@ export const Game = () => {
           ))}
         </div>
         <Button
-          text="Generate new pair"
+          text="New pair"
           isDisabled={!clicked}
           onClick={replaceMovies}
           width="fit"
-          className="px-4"
+          className="px-20 text-xl sm:px-4 sm:text-base"
         />
       </div>
       <Modal showModal={showModal} streak={points} onClick={reset} />
