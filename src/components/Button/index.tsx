@@ -1,5 +1,6 @@
 import clsx from 'clsx'
 import { SpinnerIcon } from '@components/icons/SpinnerIcon'
+import { BackIcon } from '@components/icons/BackIcon'
 
 interface ButtonProps {
   text: string
@@ -9,6 +10,7 @@ interface ButtonProps {
   width?: 'full' | '1/2' | 'fit'
   variant?: 'primary' | 'secondary'
   className?: string
+  icon?: string
   onClick?: () => void
 }
 
@@ -20,10 +22,11 @@ export const Button = ({
   width = 'full',
   variant = 'primary',
   className,
+  icon,
   onClick
 }: ButtonProps) => {
   const defaultClasses =
-    'rounded-lg h-9 text-text text-center transition-all duration-150'
+    'rounded-lg h-9 text-text text-center flex justify-center items-center gap-2 transition-all duration-150'
   const primaryClasses = 'bg-button hover:bg-hover border-none'
   const secondaryClasses = 'bg-main border border-button'
   const disabledClasses = 'opacity-60 pointer-events-none'
@@ -41,6 +44,7 @@ export const Button = ({
       onClick={onClick}
       disabled={isDisabled || isLoading}
     >
+      {icon === 'BackIcon' && <BackIcon />}
       {isLoading ? <SpinnerIcon /> : text}
     </button>
   )

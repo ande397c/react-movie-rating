@@ -9,7 +9,8 @@ module.exports = {
       button: '#6a3a67',
       hover: '#572753',
       logoBg: '#ecc748',
-      logoColor: '#000000'
+      logoColor: '#000000',
+      danger: '#b63d37'
     }
   },
   plugins: [require('@tailwindcss/forms')]

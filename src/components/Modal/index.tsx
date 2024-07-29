@@ -2,6 +2,7 @@ import { FormEvent, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '@components/Button'
 import { supabase } from '../../services/supabaseClient'
+import clsx from 'clsx'
 interface ModalProps {
   showModal: boolean
   streak: number
@@ -10,14 +11,17 @@ interface ModalProps {
 
 export const Modal = ({ showModal, streak, onClick }: ModalProps) => {
   const [name, setName] = useState<string>('')
+  const [error, setError] = useState<string>('')
   const [isLoading, setIsLoading] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
 
   const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault()
     setIsLoading(true)
+    e.preventDefault()
 
     if (name.length == 0 || name.length > 20) {
+      setError('Name must be under 20 characters')
+      setIsLoading(false)
       return
     }
 
@@ -28,7 +32,8 @@ export const Modal = ({ showModal, streak, onClick }: ModalProps) => {
     // localStorage.setItem('name', name)
 
     if (error) {
-      console.log(error)
+      setError('Something went wrong. Please try again')
+      setIsLoading(false)
     } else {
       setIsLoading(false)
       setIsSubmitted(true)
@@ -72,7 +77,10 @@ export const Modal = ({ showModal, streak, onClick }: ModalProps) => {
                         Scoreboard name
                       </label>
                       <input
-                        className="w-full h-8 rounded-md text-logoColor"
+                        className={clsx('w-full h-8 rounded-md', {
+                          'text-logoColor': !error,
+                          'border-1 border-danger text-danger': error
+                        })}
                         name="name"
                         type="text"
                         placeholder="Name"
@@ -80,6 +88,9 @@ export const Modal = ({ showModal, streak, onClick }: ModalProps) => {
                           setName(e.target.value)
                         }}
                       />
+                      {error && (
+                        <span className="text-danger text-sm">{error}</span>
+                      )}
                       <Button
                         text="Submit"
                         type="submit"
