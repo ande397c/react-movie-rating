@@ -10,7 +10,7 @@ import { moviesData } from '@data/moviesData'
 
 export const Game = () => {
   const [movies, setMovies] = useState<Movie[]>(
-    getRandomArrayElements({ array: moviesData, num: 2 })
+    getRandomArrayElements(moviesData, 2)
   )
   const [points, setPoints] = useState<number>(0)
   const [selected, setSelected] = useState<number | null>(null)
@@ -56,9 +56,9 @@ export const Game = () => {
     if (clicked) {
       setClicked(false)
       setSelected(null)
-      let randomMovies = getRandomArrayElements({ array: moviesData, num: 2 })
+      let randomMovies = getRandomArrayElements(moviesData, 2)
       while (randomMovies[0].rating === randomMovies[1].rating) {
-        randomMovies = getRandomArrayElements({ array: moviesData, num: 2 })
+        randomMovies = getRandomArrayElements(moviesData, 2)
       }
       setMovies(randomMovies)
     }
