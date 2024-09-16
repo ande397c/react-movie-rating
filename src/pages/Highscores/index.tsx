@@ -2,23 +2,29 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Score } from '@components/Score'
 import { Button } from '@components/Button'
-// import { getStorageName } from '@utils/getStorageName'
+import { SpinnerIcon } from '@components/icons/SpinnerIcon'
+// import { getStorageId } from '@utils/getStorageId'
 import { supabase } from '../../services/supabaseClient'
 import { Highscore } from '../../types/highscore'
+import clsx from 'clsx'
 
 export const Highscores = () => {
   const [highscores, setHighscores] = useState<Highscore[] | null>(null)
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
     getHighscores()
   }, [])
 
   async function getHighscores() {
+    setIsLoading(true)
     const { data } = await supabase
       .from('highscores')
       .select()
       .order('highscore', { ascending: false })
     setHighscores(data)
+    setIsLoading(false)
+    console.log(data)
   }
 
   return (
@@ -36,7 +42,14 @@ export const Highscores = () => {
           <h3 className="w-1/3 text-center">Score</h3>
         </div>
         <div className="h-[550px] overflow-y-auto">
-          <div className="flex flex-col space-y-2">
+          <div
+            className={clsx({
+              'flex space-y-2': true,
+              'flex-col': !isLoading,
+              'justify-center items-baseline': isLoading
+            })}
+          >
+            {isLoading && <SpinnerIcon size="lg" className="mt-6" />}
             {highscores?.map((highscore, index) => (
               <Score
                 key={highscore.id}

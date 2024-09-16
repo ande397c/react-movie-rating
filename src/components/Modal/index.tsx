@@ -28,8 +28,8 @@ export const Modal = ({ showModal, streak, onClick }: ModalProps) => {
     const { error } = await supabase
       .from('highscores')
       .insert({ name: name, highscore: streak })
-
-    // localStorage.setItem('name', name)
+    // const id = Date.now()
+    // localStorage.setItem('id', JSON.stringify(id))
 
     if (error) {
       setError('Something went wrong. Please try again')
