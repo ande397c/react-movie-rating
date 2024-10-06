@@ -20,7 +20,7 @@ export const Modal = ({ showModal, streak, onClick }: ModalProps) => {
     e.preventDefault()
 
     if (name.length == 0 || name.length > 20) {
-      setError('Name must be under 20 characters')
+      setError('Name must be between 1 and 20 characters')
       setIsLoading(false)
       return
     }
@@ -28,8 +28,8 @@ export const Modal = ({ showModal, streak, onClick }: ModalProps) => {
     const { error } = await supabase
       .from('highscores')
       .insert({ name: name, highscore: streak })
-    // const id = Date.now()
-    // localStorage.setItem('id', JSON.stringify(id))
+    // const timestamp = Date.now()
+    // localStorage.setItem('timestamp', JSON.stringify(timestamp))
 
     if (error) {
       setError('Something went wrong. Please try again')
@@ -37,6 +37,13 @@ export const Modal = ({ showModal, streak, onClick }: ModalProps) => {
     } else {
       setIsLoading(false)
       setIsSubmitted(true)
+    }
+  }
+
+  const handlePlayAgain = () => {
+    setIsSubmitted(false)
+    if (onClick) {
+      onClick()
     }
   }
   return (
@@ -57,7 +64,7 @@ export const Modal = ({ showModal, streak, onClick }: ModalProps) => {
 
                 {/*body*/}
                 <div className="px-6 mb-6">
-                  {isSubmitted ? (
+                  {isSubmitted && showModal ? (
                     <div className="text-center">
                       <h4 className="my-4 text-lg">
                         Thanks for submitting your streak
@@ -105,7 +112,7 @@ export const Modal = ({ showModal, streak, onClick }: ModalProps) => {
                     <Link to="/" className="w-full">
                       <Button text="Front page" variant="secondary" />
                     </Link>
-                    <Button text="Play again" onClick={onClick} />
+                    <Button text="Play again" onClick={handlePlayAgain} />
                   </div>
                 </div>
               </div>

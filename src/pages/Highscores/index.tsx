@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Score } from '@components/Score'
 import { Button } from '@components/Button'
 import { SpinnerIcon } from '@components/icons/SpinnerIcon'
-// import { getStorageId } from '@utils/getStorageId'
+// import { getStorageTimestamp } from '@utils/getStorageTimestamp'
 import { supabase } from '../../services/supabaseClient'
 import { Highscore } from '../../types/highscore'
 import clsx from 'clsx'
@@ -24,7 +24,6 @@ export const Highscores = () => {
       .order('highscore', { ascending: false })
     setHighscores(data)
     setIsLoading(false)
-    console.log(data)
   }
 
   return (

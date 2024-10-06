@@ -18,7 +18,7 @@ export const Game = () => {
   const [showModal, setShowModal] = useState<boolean>(false)
 
   const handleKeyDown = (e: KeyboardEvent) => {
-    if (e.key === ' ' || e.key === 'Enter') {
+    if (e.key === ' ' || (e.key === 'Enter' && !showModal)) {
       replaceMovies()
     }
   }
