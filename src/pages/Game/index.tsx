@@ -1,43 +1,38 @@
-import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { Card } from '@components/Card'
+import { useState } from 'react'
+import { MovieCard } from '@/components/MovieCard'
 import { Button } from '@components/Button'
 import { Modal } from '@components/Modal'
+import { Header } from '@/components/Header'
 import { getRandomArrayElements } from '@utils/getRandomArrayElements'
 import { getHighestRating } from '@utils/getHighestRating'
-import { Movie } from '@/types/movie'
+import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
+import { TMovie } from '@/types/movie'
 import { moviesData } from '@data/moviesData'
 
 export const Game = () => {
-  const [movies, setMovies] = useState<Movie[]>(
+  const [movies, setMovies] = useState<TMovie[]>(
     getRandomArrayElements(moviesData, 2)
   )
   const [points, setPoints] = useState<number>(0)
-  const [selected, setSelected] = useState<number | null>(null)
-  const [clicked, setClicked] = useState<boolean>(false)
+  const [selectedMovie, setSelectedMovie] = useState<number | null>(null)
+  const [isClicked, setIsClicked] = useState<boolean>(false)
   const [showModal, setShowModal] = useState<boolean>(false)
 
-  const handleKeyDown = (e: KeyboardEvent) => {
-    if (e.key === ' ' || (e.key === 'Enter' && !showModal)) {
+  useKeyboardShortcut({
+    keys: ['Space', 'Enter'],
+    isEnabled: !showModal,
+    onKeyPressed: () => {
       replaceMovies()
     }
-  }
+  })
 
-  useEffect(() => {
-    window.addEventListener('keydown', handleKeyDown)
-
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown)
-    }
-  }, [clicked])
-
-  const handleClick = (movie: Movie, index: number) => {
-    setSelected(index)
-    setClicked(true)
+  const handleClick = (movie: TMovie, index: number) => {
+    setSelectedMovie(index)
+    setIsClicked(true)
     const highestRating = getHighestRating({ array: movies })
 
     if (highestRating === movie.rating) {
-      if (clicked) {
+      if (isClicked) {
         return
       }
       setPoints((prevPoints) => prevPoints + 1)
@@ -53,9 +48,9 @@ export const Game = () => {
   }
 
   const replaceMovies = () => {
-    if (clicked) {
-      setClicked(false)
-      setSelected(null)
+    if (isClicked) {
+      setIsClicked(false)
+      setSelectedMovie(null)
       let randomMovies = getRandomArrayElements(moviesData, 2)
       while (randomMovies[0].rating === randomMovies[1].rating) {
         randomMovies = getRandomArrayElements(moviesData, 2)
@@ -66,15 +61,7 @@ export const Game = () => {
 
   return (
     <>
-      <header className="p-4 sm:px-12 px-4 text-text flex justify-between items-center text-lg fixed w-full">
-        {/* <h2 className="text-2xl">Category:</h2> */}
-        <Link to="/">
-          <Button text="Go back" width="fit" icon="BackIcon" className="px-4" />
-        </Link>
-        <h2 className="text-2xl">
-          Streak: <span className="text-secondary">{points}</span>
-        </h2>
-      </header>
+      <Header streak={points} />
       <div className="h-screen w-full flex justify-center items-center flex-col text-text">
         <h3 className="text-3xl text-center mt-8 sm:mt-0">
           Which movie has the highest rating?
@@ -82,20 +69,18 @@ export const Game = () => {
         <div className="flex items-center h-[24rem] sm:h-[28rem] mt-5 gap-4 sm:gap-0">
           <h4 className="text-lg sm:text-2xl mb-12">OR</h4>
           {movies.map((movie, index) => (
-            <Card
+            <MovieCard
               key={movie.id}
-              clicked={clicked}
-              isSelected={index === selected}
-              img={movie.poster_path}
-              title={movie.title}
-              rating={movie.rating}
+              clicked={isClicked}
+              isSelected={index === selectedMovie}
+              movie={movie}
               onClick={() => handleClick(movie, index)}
             />
           ))}
         </div>
         <Button
           text="New pair"
-          isDisabled={!clicked}
+          isDisabled={!isClicked}
           onClick={replaceMovies}
           width="fit"
           className="px-20 text-xl sm:px-4 sm:text-base"

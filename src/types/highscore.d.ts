@@ -1,4 +1,4 @@
-export interface Highscore {
+export interface THighscore {
   id: number
   created_at: string
   name: string

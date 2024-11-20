@@ -1,7 +1,7 @@
-import { Movie } from '@/types/movie'
+import { TMovie } from '@/types/movie'
 
 interface GetHighestRatingProps {
-  array: Movie[]
+  array: TMovie[]
 }
 
 export const getHighestRating = ({ array }: GetHighestRatingProps) => {

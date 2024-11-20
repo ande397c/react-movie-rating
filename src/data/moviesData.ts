@@ -1,6 +1,6 @@
-import { Movie } from '@/types/movie'
+import { TMovie } from '@/types/movie'
 
-export const moviesData: Movie[] = [
+export const moviesData: TMovie[] = [
   {
     id: 1,
     poster_path:

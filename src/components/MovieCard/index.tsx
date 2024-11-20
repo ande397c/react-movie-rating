@@ -2,24 +2,21 @@ import { useState } from 'react'
 import clsx from 'clsx'
 import { getQualityPoster } from '@utils/getQualityPoster'
 import MoviePoster from '../../../assets/movie_poster.png'
+import { TMovie } from '@/types/movie'
 
-interface CardProps {
-  img: string
-  title: string
-  rating: number
+interface MovieCardProps {
+  movie: TMovie
   clicked: boolean
   isSelected: boolean
   onClick: () => void
 }
 
-export const Card = ({
-  img,
-  title,
-  rating,
+export const MovieCard = ({
+  movie,
   clicked,
   isSelected,
   onClick
-}: CardProps) => {
+}: MovieCardProps) => {
   const [fallbackImg, setFallbackImg] = useState(false)
   return (
     <div
@@ -31,7 +28,7 @@ export const Card = ({
     >
       <div className="w-[120px] sm:w-[160px] h-full">
         <img
-          src={fallbackImg ? MoviePoster : getQualityPoster(img)}
+          src={fallbackImg ? MoviePoster : getQualityPoster(movie.poster_path)}
           className="rounded-sm max-w-full max-h-full"
           onError={() => {
             setFallbackImg(true)
@@ -40,8 +37,9 @@ export const Card = ({
       </div>
       <div className="text-center pt-4 text-xl overflow-hidden max-w-[100px] sm:w-[260px] sm:max-w-xs sm:h-fit">
         <h3 className="truncate overflow-visible whitespace-normal sm:group-hover:overflow-visible text-clip sm:group-hover:whitespace-normal sm:group-hover:text-clip text-base sm:text-lg line-clamp-2">
-          {title}
+          {movie.title}
         </h3>
+        <p className="text-text opacity-80 text-sm">{movie.release_date}</p>
       </div>
       <div className="mt-4 text-secondary text-base sm:text-[1.3rem] text-center">
         <p
@@ -50,7 +48,7 @@ export const Card = ({
             invisible: !clicked
           })}
         >
-          {clicked ? rating : 'Nice try'}
+          {clicked ? movie.rating : 'Nice try:)'}
         </p>
       </div>
     </div>

@@ -5,11 +5,11 @@ import { Button } from '@components/Button'
 import { SpinnerIcon } from '@components/icons/SpinnerIcon'
 // import { getStorageTimestamp } from '@utils/getStorageTimestamp'
 import { supabase } from '../../services/supabaseClient'
-import { Highscore } from '../../types/highscore'
+import { THighscore } from '../../types/highscore'
 import clsx from 'clsx'
 
 export const Highscores = () => {
-  const [highscores, setHighscores] = useState<Highscore[] | null>(null)
+  const [highscores, setHighscores] = useState<THighscore[] | null>(null)
   const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
