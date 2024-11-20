@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom'
 import { Score } from '@components/Score'
 import { Button } from '@components/Button'
 import { SpinnerIcon } from '@components/icons/SpinnerIcon'
-// import { getStorageTimestamp } from '@utils/getStorageTimestamp'
+import { getStorageId } from '@utils/getStorageId'
 import { supabase } from '../../services/supabaseClient'
 import { THighscore } from '../../types/highscore'
 import clsx from 'clsx'
 
 export const Highscores = () => {
   const [highscores, setHighscores] = useState<THighscore[] | null>(null)
+  const [errorOccurred, setErrorOccurred] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
@@ -18,12 +19,15 @@ export const Highscores = () => {
 
   async function getHighscores() {
     setIsLoading(true)
-    const { data } = await supabase
+    const { data, error } = await supabase
       .from('highscores')
       .select()
       .order('highscore', { ascending: false })
     setHighscores(data)
     setIsLoading(false)
+    if (error) {
+      setErrorOccurred(true)
+    }
   }
 
   return (
@@ -49,13 +53,18 @@ export const Highscores = () => {
             })}
           >
             {isLoading && <SpinnerIcon size="lg" className="mt-6" />}
+            {errorOccurred && !isLoading && (
+              <h3 className="text-text text-center text-lg">
+                Error occurred while fetching data
+              </h3>
+            )}
             {highscores?.map((highscore, index) => (
               <Score
                 key={highscore.id}
                 pos={index + 1}
                 name={highscore.name}
                 streak={highscore.highscore}
-                // isOwnScore={getStorageName() === highscore.name}
+                isOwnScore={getStorageId() === highscore.id}
               />
             ))}
           </div>

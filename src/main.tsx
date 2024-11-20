@@ -6,13 +6,19 @@ import App from './App'
 import { Game } from './pages/Game'
 import { Highscores } from './pages/Highscores'
 
+const routes = [
+  { path: '/', element: <App /> },
+  { path: '/game', element: <Game /> },
+  { path: '/highscores', element: <Highscores /> }
+]
+
 createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/game" element={<Game />} />
-        <Route path="/highscores" element={<Highscores />} />
+        {routes.map((route) => (
+          <Route key={route.path} path={route.path} element={route.element} />
+        ))}
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

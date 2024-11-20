@@ -25,19 +25,19 @@ export const Modal = ({ showModal, streak, onClick }: ModalProps) => {
       return
     }
 
-    const { error } = await supabase
+    const { error, data } = await supabase
       .from('highscores')
       .insert({ name: name, highscore: streak })
-    // const timestamp = Date.now()
-    // localStorage.setItem('timestamp', JSON.stringify(timestamp))
+      .select()
 
     if (error) {
       setError('Something went wrong. Please try again')
       setIsLoading(false)
-    } else {
-      setIsLoading(false)
-      setIsSubmitted(true)
     }
+
+    setIsLoading(false)
+    setIsSubmitted(true)
+    localStorage.setItem('score_id', data && data[0].id)
   }
 
   const handlePlayAgain = () => {
