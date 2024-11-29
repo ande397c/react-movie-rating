@@ -63,7 +63,7 @@ export const Game = () => {
     <>
       <Header streak={points} />
       <div className="h-screen w-full flex justify-center items-center flex-col text-text">
-        <h3 className="text-3xl text-center mt-8 sm:mt-0">
+        <h3 className="text-2xl sm:text-3xl text-center mt-8 sm:mt-0">
           Which movie has the highest rating?
         </h3>
         <div className="flex items-center h-[24rem] sm:h-[28rem] mt-5 gap-4 sm:gap-0">

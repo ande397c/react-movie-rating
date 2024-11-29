@@ -38,13 +38,13 @@ export const Highscores = () => {
           <Button text="Go back" width="fit" icon="BackIcon" />
         </Link>
       </div>
-      <div className="w-96 bg-complementary rounded-xl">
-        <div className="w-full uppercase flex justify-around text-text p-4 pb-2 text-xl">
-          <h3 className="w-1/6 text-center">Pos</h3>
-          <h3 className="w-2/6 text-center">Name</h3>
+      <div className="min-w-96 sm:min-w-[500px] lg:min-w-[700px] bg-complementary rounded-xl">
+        <div className="w-full uppercase flex justify-around text-text p-4 pb-2 text-xl font-semibold">
+          <h3 className="w-1/3 text-center">Pos</h3>
+          <h3 className="w-1/3 text-center">Name</h3>
           <h3 className="w-1/3 text-center">Score</h3>
         </div>
-        <div className="h-[550px] overflow-y-auto">
+        <div className="h-[550px] sm:h-[700px] overflow-y-auto">
           <div
             className={clsx({
               'flex space-y-2': true,
