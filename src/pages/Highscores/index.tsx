@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Score } from '@components/Score'
 import { Button } from '@components/Button'
+import { HighscoreList } from '@/components/HighscoresList'
 import { SpinnerIcon } from '@components/icons/SpinnerIcon'
-import { getStorageId } from '@utils/getStorageId'
-import { supabase } from '../../services/supabaseClient'
-import { THighscore } from '../../types/highscore'
+import { supabase } from '@services/supabaseClient'
+import { THighscore } from '@/types/highscore'
 import clsx from 'clsx'
 
 export const Highscores = () => {
@@ -58,15 +57,7 @@ export const Highscores = () => {
                 Error occurred while fetching data
               </h3>
             )}
-            {highscores?.map((highscore, index) => (
-              <Score
-                key={highscore.id}
-                pos={index + 1}
-                name={highscore.name}
-                streak={highscore.highscore}
-                isOwnScore={getStorageId() === highscore.id}
-              />
-            ))}
+            <HighscoreList highscores={highscores && highscores} />
           </div>
         </div>
       </div>

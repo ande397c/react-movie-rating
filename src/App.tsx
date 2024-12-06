@@ -1,5 +1,4 @@
 import { ReactElement } from 'react'
-import { Link } from 'react-router-dom'
 import { Button } from '@components/Button'
 
 const App = (): ReactElement => {
@@ -26,12 +25,12 @@ const App = (): ReactElement => {
           </p>
 
           <article className="flex flex-col sm:flex-row justify-center gap-6">
-            <Link to="/highscores" className="w-full">
-              <Button text="View highscores" variant="secondary" />
-            </Link>
-            <Link to="/game" className="w-full">
-              <Button text="Play" />
-            </Link>
+            <Button
+              text="View highscores"
+              variant="secondary"
+              link="/highscores"
+            />
+            <Button text="Play" link="/game" />
           </article>
         </section>
       </div>

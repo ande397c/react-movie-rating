@@ -41,22 +41,29 @@ export const Game = () => {
     }
   }
 
-  const reset = () => {
+  const resetGame = () => {
     setShowModal(false)
     setPoints(0)
     replaceMovies()
   }
 
   const replaceMovies = () => {
-    if (isClicked) {
-      setIsClicked(false)
-      setSelectedMovie(null)
-      let randomMovies = getRandomArrayElements(moviesData, 2)
-      while (randomMovies[0].rating === randomMovies[1].rating) {
-        randomMovies = getRandomArrayElements(moviesData, 2)
-      }
-      setMovies(randomMovies)
+    if (!isClicked) return
+
+    setIsClicked(false)
+    setSelectedMovie(null)
+
+    let randomMovies: TMovie[] = []
+    let wrongMovieValues = true
+
+    while (wrongMovieValues) {
+      randomMovies = getRandomArrayElements(moviesData, 2)
+      wrongMovieValues =
+        randomMovies[0].rating === randomMovies[1].rating ||
+        Math.abs(randomMovies[0].rating - randomMovies[1].rating) < 0.3
     }
+
+    setMovies(randomMovies)
   }
 
   return (
@@ -86,7 +93,7 @@ export const Game = () => {
           className="px-20 text-xl sm:px-4 sm:text-base"
         />
       </div>
-      <Modal showModal={showModal} streak={points} onClick={reset} />
+      <Modal showModal={showModal} streak={points} onClick={resetGame} />
     </>
   )
 }
