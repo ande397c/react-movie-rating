@@ -24,7 +24,7 @@ const App = (): ReactElement => {
             game.
           </p>
 
-          <article className="flex flex-col sm:flex-row justify-center gap-6">
+          <article className="flex flex-col-reverse sm:flex-row justify-center gap-6">
             <Button
               text="View highscores"
               variant="secondary"

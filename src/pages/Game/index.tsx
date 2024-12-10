@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { MovieCard } from '@/components/MovieCard'
 import { Button } from '@components/Button'
 import { Modal } from '@components/Modal'
@@ -10,13 +10,10 @@ import { TMovie } from '@/types/movie'
 import { moviesData } from '@data/moviesData'
 
 export const Game = () => {
-  const [movies, setMovies] = useState<TMovie[]>(
-    getRandomArrayElements(moviesData, 2)
-  )
-  const [points, setPoints] = useState<number>(0)
+  const [movies, setMovies] = useState<TMovie[] | undefined>(undefined)
   const [selectedMovie, setSelectedMovie] = useState<number | null>(null)
-  const [isClicked, setIsClicked] = useState<boolean>(false)
-  const [showModal, setShowModal] = useState<boolean>(false)
+  const [points, setPoints] = useState(0)
+  const [showModal, setShowModal] = useState(false)
 
   useKeyboardShortcut({
     keys: ['Space', 'Enter'],
@@ -26,15 +23,17 @@ export const Game = () => {
     }
   })
 
+  useEffect(() => {
+    replaceMovies()
+  }, [])
+
   const handleClick = (movie: TMovie, index: number) => {
+    if (!movies) return
+
     setSelectedMovie(index)
-    setIsClicked(true)
     const highestRating = getHighestRating({ array: movies })
 
     if (highestRating === movie.rating) {
-      if (isClicked) {
-        return
-      }
       setPoints((prevPoints) => prevPoints + 1)
     } else {
       setShowModal(true)
@@ -48,21 +47,21 @@ export const Game = () => {
   }
 
   const replaceMovies = () => {
-    if (!isClicked) return
-
-    setIsClicked(false)
-    setSelectedMovie(null)
+    // Prevent user from cycling trough movies during game
+    if (selectedMovie === null && points > 0) return
 
     let randomMovies: TMovie[] = []
-    let wrongMovieValues = true
+    randomMovies = getRandomArrayElements(moviesData, 2)
+    let wrongValues
 
-    while (wrongMovieValues) {
+    do {
       randomMovies = getRandomArrayElements(moviesData, 2)
-      wrongMovieValues =
+      wrongValues =
         randomMovies[0].rating === randomMovies[1].rating ||
-        Math.abs(randomMovies[0].rating - randomMovies[1].rating) < 0.3
-    }
+        Math.abs(randomMovies[0].rating - randomMovies[1].rating) < 0.2
+    } while (wrongValues)
 
+    setSelectedMovie(null)
     setMovies(randomMovies)
   }
 
@@ -75,10 +74,10 @@ export const Game = () => {
         </h3>
         <div className="flex items-center h-[24rem] sm:h-[28rem] mt-5 gap-4 sm:gap-0">
           <h4 className="text-lg sm:text-2xl mb-12">OR</h4>
-          {movies.map((movie, index) => (
+          {movies?.map((movie, index) => (
             <MovieCard
               key={movie.id}
-              clicked={isClicked}
+              clicked={selectedMovie !== null}
               isSelected={index === selectedMovie}
               movie={movie}
               onClick={() => handleClick(movie, index)}
@@ -87,7 +86,7 @@ export const Game = () => {
         </div>
         <Button
           text="New pair"
-          isDisabled={!isClicked}
+          isDisabled={selectedMovie == null}
           onClick={replaceMovies}
           width="fit"
           className="px-20 text-xl sm:px-4 sm:text-base"

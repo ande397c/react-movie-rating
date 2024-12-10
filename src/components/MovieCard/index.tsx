@@ -18,6 +18,7 @@ export const MovieCard = ({
   onClick
 }: MovieCardProps) => {
   const [fallbackImg, setFallbackImg] = useState(false)
+
   return (
     <div
       className={clsx(
