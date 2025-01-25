@@ -23,6 +23,7 @@ export const Game = () => {
     }
   })
 
+  // Load first pair on mount
   useEffect(() => {
     replaceMovies()
   }, [])
