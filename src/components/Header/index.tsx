@@ -1,4 +1,5 @@
 import { Button } from '../Button'
+import { ShortcutsBar } from '@/components/ShortcutsBar'
 
 interface HeaderProps {
   streak: number
@@ -15,6 +16,7 @@ export const Header = ({ streak }: HeaderProps) => {
         className="px-4"
         link="/"
       />
+      <ShortcutsBar />
       <h2 className="text-2xl">
         Streak: <span className="text-secondary">{streak}</span>
       </h2>
