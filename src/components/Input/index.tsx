@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  label: string
+  label?: string
   error?: string
 }
 
@@ -9,7 +9,7 @@ export const Input = ({ label, error, ...inputProps }: InputProps) => {
   return (
     <>
       <label className="block" htmlFor={inputProps.name}>
-        {label}
+        {label && label}
       </label>
       <input
         {...inputProps}

@@ -6,6 +6,7 @@ import { SpinnerIcon } from '@components/icons/SpinnerIcon'
 import { supabase } from '@services/supabaseClient'
 import { THighscore } from '@/types/highscore'
 import clsx from 'clsx'
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
 export const Highscores = () => {
   const [highscores, setHighscores] = useState<THighscore[] | null>(null)
@@ -34,7 +35,7 @@ export const Highscores = () => {
       <h1 className="text-4xl text-text font-semibold">Highscores</h1>
       <div className="py-4 flex justify-center">
         <Link to="/">
-          <Button text="Go back" width="fit" icon="BackIcon" />
+          <Button text="Go back" width="fit" icon={faArrowLeft} />
         </Link>
       </div>
       <div className="min-w-96 sm:min-w-[500px] lg:min-w-[700px] bg-complementary rounded-xl">

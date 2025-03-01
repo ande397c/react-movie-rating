@@ -1,5 +1,5 @@
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import { Button } from '../Button'
-import { ShortcutsBar } from '@/components/ShortcutsBar'
 
 interface HeaderProps {
   streak: number
@@ -12,11 +12,11 @@ export const Header = ({ streak }: HeaderProps) => {
       <Button
         text="Go back"
         width="fit"
-        icon="BackIcon"
+        icon={faArrowLeft}
         className="px-4"
         link="/"
       />
-      <ShortcutsBar />
+
       <h2 className="text-2xl">
         Streak: <span className="text-secondary">{streak}</span>
       </h2>

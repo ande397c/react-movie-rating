@@ -1,17 +1,18 @@
 import { Link } from 'react-router-dom'
 import clsx from 'clsx'
 import { SpinnerIcon } from '@components/icons/SpinnerIcon'
-import { BackIcon } from '@components/icons/BackIcon'
+import { IconDefinition } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 interface ButtonProps {
-  text: string
+  text?: string
   isDisabled?: boolean
   isLoading?: boolean
+  icon?: IconDefinition
   type?: 'button' | 'submit' | 'reset'
   width?: 'full' | '1/2' | 'fit'
   variant?: 'primary' | 'secondary'
   className?: string
-  icon?: string
   link?: string
   onClick?: () => void
 }
@@ -46,9 +47,11 @@ export const Button = ({
     [disabledClasses]: isDisabled || isLoading
   })
 
+  const Icon = icon && <FontAwesomeIcon icon={icon} />
+
   return link ? (
     <Link to={link} className={classes}>
-      {icon === 'BackIcon' && <BackIcon />}
+      {Icon}
       {text}
     </Link>
   ) : (
@@ -58,7 +61,7 @@ export const Button = ({
       onClick={onClick}
       disabled={isDisabled || isLoading}
     >
-      {icon === 'BackIcon' && <BackIcon />}
+      {Icon}
       {isLoading ? <SpinnerIcon /> : text}
     </button>
   )

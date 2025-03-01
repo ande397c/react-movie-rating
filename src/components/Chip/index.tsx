@@ -13,7 +13,8 @@ export const Chip = ({
   variant = 'primary',
   className
 }: ChipProps) => {
-  const primaryClasses = 'bg-text text-button p-2 px-2 mx-2 text-sm'
+  const primaryClasses =
+    'bg-text text-button p-2 px-2 mx-2 text-sm font-semibold'
   const classes = clsx(className, {
     [primaryClasses]: variant === 'primary',
     'rounded-sm': rounded === 'sm',

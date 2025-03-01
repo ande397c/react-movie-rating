@@ -1,23 +1,30 @@
 import { useEffect, useState } from 'react'
 import { MovieCard } from '@/components/MovieCard'
 import { Button } from '@components/Button'
-import { Modal } from '@components/Modal'
+import { GameOverModal } from '@/components/GameOverModal'
+import { ShortcutsModal } from '@/components/ShortcutsModal'
 import { Header } from '@/components/Header'
-import { getRandomArrayElements } from '@utils/getRandomArrayElements'
+import { randomizeArray } from '@/utils/randomizeArray'
 import { getHighestRating } from '@utils/getHighestRating'
+import { detectDevice } from '@/utils/detectDevice'
 import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
 import { TMovie } from '@/types/movie'
+import { TModalTypes } from '@/types/modalTypes'
 import { moviesData } from '@data/moviesData'
+import { faQuestion } from '@fortawesome/free-solid-svg-icons'
 
 export const Game = () => {
   const [movies, setMovies] = useState<TMovie[] | undefined>(undefined)
   const [selectedMovie, setSelectedMovie] = useState<number | null>(null)
   const [points, setPoints] = useState(0)
-  const [showModal, setShowModal] = useState(false)
+  const [modalControl, setModalControl] = useState<TModalTypes>(null)
+
+  const showGameOverModal = modalControl === 'gameOver'
+  const showShortcutsModal = modalControl === 'shortcuts'
 
   useKeyboardShortcut({
     keys: ['Space', 'Enter'],
-    isEnabled: !showModal,
+    isEnabled: !showGameOverModal,
     onKeyPressed: () => {
       replaceMovies()
     }
@@ -28,6 +35,10 @@ export const Game = () => {
     replaceMovies()
   }, [])
 
+  const closeModal = () => {
+    setModalControl(null)
+  }
+
   const handleClick = (movie: TMovie, index: number) => {
     if (!movies) return
 
@@ -37,12 +48,12 @@ export const Game = () => {
     if (highestRating === movie.rating) {
       setPoints((prevPoints) => prevPoints + 1)
     } else {
-      setShowModal(true)
+      setModalControl('gameOver')
     }
   }
 
   const resetGame = () => {
-    setShowModal(false)
+    closeModal()
     setPoints(0)
     replaceMovies()
   }
@@ -51,19 +62,8 @@ export const Game = () => {
     // Prevent user from cycling trough movies during game
     if (selectedMovie === null && points > 0) return
 
-    let randomMovies: TMovie[] = []
-    randomMovies = getRandomArrayElements(moviesData, 2)
-    let wrongValues
-
-    do {
-      randomMovies = getRandomArrayElements(moviesData, 2)
-      wrongValues =
-        randomMovies[0].rating === randomMovies[1].rating ||
-        Math.abs(randomMovies[0].rating - randomMovies[1].rating) < 0.2
-    } while (wrongValues)
-
+    setMovies(randomizeArray(moviesData))
     setSelectedMovie(null)
-    setMovies(randomMovies)
   }
 
   return (
@@ -92,8 +92,21 @@ export const Game = () => {
           width="fit"
           className="px-20 text-xl sm:px-4 sm:text-base"
         />
+        {detectDevice() === 'PC' && (
+          <Button
+            className="fixed bottom-6 right-6"
+            width="fit"
+            icon={faQuestion}
+            onClick={() => setModalControl('shortcuts')}
+          />
+        )}
       </div>
-      <Modal showModal={showModal} streak={points} onClick={resetGame} />
+      <ShortcutsModal showModal={showShortcutsModal} onClose={closeModal} />
+      <GameOverModal
+        showModal={showGameOverModal}
+        streak={points}
+        onClick={resetGame}
+      />
     </>
   )
 }
