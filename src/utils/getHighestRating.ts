@@ -1,10 +1,6 @@
 import { TMovie } from '@/types/movie'
 
-interface GetHighestRatingProps {
-  array: TMovie[]
-}
-
-export const getHighestRating = ({ array }: GetHighestRatingProps) => {
+export const getHighestRating = (array: TMovie[]) => {
   const ratings = array.map((movie) => {
     return movie.rating
   })

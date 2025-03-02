@@ -27,7 +27,7 @@ export const GameOverModal = ({
     e.preventDefault()
 
     if (nameNotValid) {
-      setError('Value must be between 1 and 20 characters')
+      setError('Name must be between 1 and 20 characters')
       return
     }
 

@@ -43,7 +43,7 @@ export const Game = () => {
     if (!movies) return
 
     setSelectedMovie(index)
-    const highestRating = getHighestRating({ array: movies })
+    const highestRating = getHighestRating(movies)
 
     if (highestRating === movie.rating) {
       setPoints((prevPoints) => prevPoints + 1)

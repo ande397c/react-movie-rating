@@ -1,3 +1,4 @@
+import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
 import { BaseModal } from '@/components/BaseModal'
 import { Chip } from '@/components/Chip'
 import { Button } from '@/components/Button'
@@ -7,6 +8,11 @@ interface ShortcutsModalProps {
   onClose: () => void
 }
 export const ShortcutsModal = ({ showModal, onClose }: ShortcutsModalProps) => {
+  useKeyboardShortcut({
+    keys: ['Escape'],
+    isEnabled: true,
+    onKeyPressed: onClose
+  })
   return (
     <BaseModal
       title="Keybord shortcuts"
@@ -17,7 +23,7 @@ export const ShortcutsModal = ({ showModal, onClose }: ShortcutsModalProps) => {
     >
       <>
         <p className="my-8 text-lg text-center">
-          Generate new pair: <Chip text="Space" /> or <Chip text="Enter" />
+          New pair: <Chip text="Space" /> or <Chip text="Enter" />
         </p>
       </>
       <BaseModal.Actions>

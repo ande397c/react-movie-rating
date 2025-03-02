@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-interface UseKeyboardShortcutArgs {
+interface UseKeyboardShortcutProps {
   keys: string | string[]
   isEnabled: boolean
   onKeyPressed: () => void
@@ -10,7 +10,7 @@ export const useKeyboardShortcut = ({
   keys,
   isEnabled,
   onKeyPressed
-}: UseKeyboardShortcutArgs) => {
+}: UseKeyboardShortcutProps) => {
   useEffect(() => {
     if (!isEnabled) return
 

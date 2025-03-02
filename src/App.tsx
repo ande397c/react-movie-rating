@@ -19,17 +19,13 @@ const App = (): ReactElement => {
         </article>
         <section className="text-text my-auto max-w-prose">
           <p className="leading-7 text-lg my-4 mb-6 max-w-prose">
-            Your goal is to guess the movie with the highest rating. Each
+            Your goal is to guess the movie with the highest IMDb rating. Each
             correct guess counts towards your streak - a failed guess ends the
-            game.
+            game. Submit your score and compete with other players.
           </p>
 
           <article className="flex flex-col-reverse sm:flex-row justify-center gap-6">
-            <Button
-              text="View highscores"
-              variant="secondary"
-              link="/highscores"
-            />
+            <Button text="Highscores" variant="secondary" link="/highscores" />
             <Button text="Play" link="/game" />
           </article>
         </section>
