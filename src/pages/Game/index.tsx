@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { MovieCard } from '@/components/MovieCard'
+import { MoviesList } from '@/components/MoviesList'
 import { Button } from '@components/Button'
 import { GameOverModal } from '@/components/GameOverModal'
 import { ShortcutsModal } from '@/components/ShortcutsModal'
@@ -24,7 +24,7 @@ export const Game = () => {
 
   useKeyboardShortcut({
     keys: ['Space', 'Enter'],
-    isEnabled: !showGameOverModal,
+    isEnabled: !showGameOverModal && selectedMovie !== null,
     onKeyPressed: () => {
       replaceMovies()
     }
@@ -44,7 +44,6 @@ export const Game = () => {
 
     setSelectedMovie(index)
     const highestRating = getHighestRating(movies)
-
     if (highestRating === movie.rating) {
       setPoints((prevPoints) => prevPoints + 1)
     } else {
@@ -73,18 +72,11 @@ export const Game = () => {
         <h3 className="text-2xl sm:text-3xl text-center mt-8 sm:mt-0">
           Which movie has the highest rating?
         </h3>
-        <div className="flex items-center h-[24rem] sm:h-[28rem] mt-5 gap-4 sm:gap-0">
-          <h4 className="text-lg sm:text-2xl mb-12">OR</h4>
-          {movies?.map((movie, index) => (
-            <MovieCard
-              key={movie.id}
-              clicked={selectedMovie !== null}
-              isSelected={index === selectedMovie}
-              movie={movie}
-              onClick={() => handleClick(movie, index)}
-            />
-          ))}
-        </div>
+        <MoviesList
+          movies={movies}
+          selectedMovie={selectedMovie}
+          handleClick={handleClick}
+        />
         <Button
           text="New pair"
           isDisabled={selectedMovie == null}

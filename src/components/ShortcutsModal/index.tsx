@@ -13,6 +13,7 @@ export const ShortcutsModal = ({ showModal, onClose }: ShortcutsModalProps) => {
     isEnabled: true,
     onKeyPressed: onClose
   })
+  if (!showModal) return null
   return (
     <BaseModal
       title="Keybord shortcuts"
