@@ -13,7 +13,7 @@ export const MoviesList = ({
   handleClick
 }: MoviesListProps) => {
   return (
-    <div className="flex items-center h-[24rem] sm:h-[28rem] mt-5 gap-4 sm:gap-0">
+    <div className="flex items-center h-[24rem] sm:h-[28rem] mt-5 gap-4">
       <h4 className="text-lg sm:text-2xl mb-12">OR</h4>
       {movies?.map((movie, index) => (
         <MovieCard

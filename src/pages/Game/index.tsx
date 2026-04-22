@@ -18,7 +18,9 @@ export const Game = () => {
   const [selectedMovie, setSelectedMovie] = useState<number | null>(null)
   const [points, setPoints] = useState(0)
   const [modalControl, setModalControl] = useState<TModalTypes>(null)
+  const [progressKey, setProgressKey] = useState(0)
 
+  const isRunning = selectedMovie === null
   const showGameOverModal = modalControl === 'gameOver'
   const showShortcutsModal = modalControl === 'shortcuts'
 
@@ -39,7 +41,12 @@ export const Game = () => {
     setModalControl(null)
   }
 
-  const handleClick = (movie: TMovie, index: number) => {
+  const reRunProgressBar = () => {
+    // Reset timer
+    setProgressKey((prevKey) => prevKey + 1)
+  }
+
+  const handleMovieClick = (movie: TMovie, index: number) => {
     if (!movies) return
 
     setSelectedMovie(index)
@@ -54,6 +61,7 @@ export const Game = () => {
   const resetGame = () => {
     closeModal()
     setPoints(0)
+    reRunProgressBar()
     replaceMovies()
   }
 
@@ -63,11 +71,17 @@ export const Game = () => {
 
     setMovies(randomizeArray(moviesData))
     setSelectedMovie(null)
+    reRunProgressBar()
   }
 
   return (
     <>
-      <Header streak={points} />
+      <Header
+        streak={points}
+        running={isRunning}
+        progressKey={progressKey}
+        onTimeEnd={() => setModalControl('gameOver')}
+      />
       <div className="h-screen w-full flex justify-center items-center flex-col text-text">
         <h3 className="text-2xl sm:text-3xl text-center mt-8 sm:mt-0">
           Which movie has the highest rating?
@@ -75,7 +89,7 @@ export const Game = () => {
         <MoviesList
           movies={movies}
           selectedMovie={selectedMovie}
-          handleClick={handleClick}
+          handleClick={handleMovieClick}
         />
         <Button
           text="New pair"

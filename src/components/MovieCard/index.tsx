@@ -1,6 +1,8 @@
 import clsx from 'clsx'
 import { TMovie } from '@/types/movie'
-import { PosterContainer } from '../PosterContainer'
+import { useState } from 'react'
+import { getQualityPoster } from '@/utils/getQualityPoster'
+import MoviePoster from '../../../assets/movie_poster.png'
 
 interface MovieCardProps {
   movie: TMovie
@@ -18,8 +20,11 @@ export const MovieCard = ({
   return (
     <div
       className={clsx(
-        'el-container group flex justify-center flex-col items-center transition-all duration-150 hover:scale-110 cursor-pointer',
-        { 'scale-105 sm:scale-125': isSelected, 'pointer-events-none': clicked }
+        'el-container group flex flex-col items-center justify-start w-[140px] sm:w-[200px] flex-shrink-0 transition-transform duration-150 cursor-pointer',
+        {
+          'scale-105 sm:scale-110': isSelected,
+          'pointer-events-none': clicked
+        }
       )}
       onClick={onClick}
     >
@@ -41,6 +46,31 @@ export const MovieCard = ({
           {clicked ? movie.rating : 'Nice try:)'}
         </p>
       </div>
+    </div>
+  )
+}
+
+interface PosterContainerProps {
+  posterPath?: string | null
+}
+
+export const PosterContainer = ({ posterPath }: PosterContainerProps) => {
+  const [hasError, setHasError] = useState(false)
+
+  const isValidPath = typeof posterPath === 'string' && posterPath.trim() !== ''
+
+  const src =
+    !isValidPath || hasError ? MoviePoster : getQualityPoster(posterPath)
+
+  return (
+    <div className="w-full aspect-[2/3] overflow-hidden rounded-md bg-gray-200">
+      <img
+        src={src}
+        alt=""
+        loading="lazy"
+        className="w-full h-full object-cover"
+        onError={() => setHasError(true)}
+      />
     </div>
   )
 }
