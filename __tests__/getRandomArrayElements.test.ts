@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, afterEach } from 'vitest'
-import { getRandomArrayElements } from '../src/utils/getRandomArrayElements'
+import { getRandomArrayElements } from '../src/features/game/utils/getRandomArrayElements'
 
 const MOVIES = [
   { id: 1, title: 'A', release_date: '2000', rating: 7 },

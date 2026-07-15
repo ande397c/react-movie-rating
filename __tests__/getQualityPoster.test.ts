@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { getQualityPoster } from '../src/utils/getQualityPoster'
+import { getQualityPoster } from '../src/features/game/utils/getQualityPoster'
 
 describe('getQualityPoster', () => {
   it('returns original poster since media is not amazon', () => {

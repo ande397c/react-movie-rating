@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { getHighestRating } from '../src/utils/getHighestRating'
+import { getHighestRating } from '../src/features/game/utils/getHighestRating'
 
 const MOVIES = [
   {

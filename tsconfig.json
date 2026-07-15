@@ -11,28 +11,15 @@
     "forceConsistentCasingInFileNames": true,
     "module": "ESNext",
     "moduleResolution": "Node",
+    "ignoreDeprecations": "6.0",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
     "paths": {
-      "@/*": ["./src/*"],
-      "@components/*": ["./src/components/*"],
-      "@data/*": ["./src/data/*"],
-      "@pages/*": ["./src/pages/*"],
-      "@services/*": ["./src/services/*"],
-      "@types/*": ["./src/types/*"],
-      "@utils/*": ["./src/utils/*"],
-      "@hooks/*": ["./src/hooks/*"]
+      "@/*": ["./src/*"]
     }
   },
-  "include": [
-    "src",
-    "postcss.config.js",
-    "tailwind.config.js",
-    "lint-staged.config.cjs",
-    "babel.config.cjs",
-    "cypress.config.ts"
-  ],
+  "include": ["src", "__tests__", "postcss.config.js", "tailwind.config.js"],
   "exclude": ["node_modules"]
 }
