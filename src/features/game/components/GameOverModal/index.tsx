@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
 import { BaseModal } from '@/components/ui/BaseModal'
 import { addHighscore } from '@/features/highscores/api/addHighscore'
+import { paths } from '@/config/paths'
 
 interface GameOverModalProps {
   showModal: boolean
@@ -56,7 +57,10 @@ export const GameOverModal = ({
     }
   }
 
-  if (!showModal) return null
+  if (!showModal) {
+    return null
+  }
+
   return (
     <BaseModal showModal={showModal} title="Game over">
       <>
@@ -95,7 +99,7 @@ export const GameOverModal = ({
           </form>
         )}
         <BaseModal.Actions>
-          <Button text="Front page" variant="secondary" link="/" />
+          <Button text="Front page" variant="secondary" link={paths.landing} />
           <Button text="Play again" onClick={handlePlayAgain} />
         </BaseModal.Actions>
       </>

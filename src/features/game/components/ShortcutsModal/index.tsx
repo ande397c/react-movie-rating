@@ -10,7 +10,7 @@ interface ShortcutsModalProps {
 export const ShortcutsModal = ({ showModal, onClose }: ShortcutsModalProps) => {
   useKeyboardShortcut({
     keys: ['Escape'],
-    isEnabled: true,
+    isEnabled: showModal,
     onKeyPressed: onClose
   })
   if (!showModal) return null

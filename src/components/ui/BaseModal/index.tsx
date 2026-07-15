@@ -21,12 +21,14 @@ export const BaseModal = ({
 }: BaseModalProps) => {
   const ref = useRef<HTMLDivElement>(null)
 
-  if (enableClickOutside && close) {
-    useOutsideClick({
-      ref,
-      callback: close
-    })
-  }
+  useOutsideClick({
+    ref,
+    callback: () => {
+      if (enableClickOutside && close) {
+        close()
+      }
+    }
+  })
 
   if (!showModal) return null
 
