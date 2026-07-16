@@ -30,7 +30,9 @@ export const BaseModal = ({
     }
   })
 
-  if (!showModal) return null
+  if (!showModal) {
+    return null
+  }
 
   return (
     <>

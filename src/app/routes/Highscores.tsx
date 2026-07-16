@@ -7,6 +7,7 @@ import { getHighscores } from '@/features/highscores/api/getHighscores'
 import { THighscore } from '@/features/highscores/types/highscore'
 import clsx from 'clsx'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+import { paths } from '@/config/paths'
 
 export const Highscores = () => {
   const [highscores, setHighscores] = useState<THighscore[] | null>(null)
@@ -31,7 +32,7 @@ export const Highscores = () => {
     <div className="h-screen w-full flex justify-start items-center flex-col p-8">
       <h1 className="text-4xl text-text font-semibold">Highscores</h1>
       <div className="py-4 flex justify-center">
-        <Link to="/">
+        <Link to={paths.landing}>
           <Button text="Go back" width="fit" icon={faArrowLeft} />
         </Link>
       </div>

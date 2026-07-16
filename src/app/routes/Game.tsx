@@ -2,16 +2,13 @@ import { useEffect, useState } from 'react'
 import { MoviesList } from '@/features/game/components/MoviesList'
 import { Button } from '@/components/ui/Button'
 import { GameOverModal } from '@/features/game/components/GameOverModal'
-import { ShortcutsModal } from '@/features/game/components/ShortcutsModal'
 import { Header } from '@/features/game/components/Header'
 import { randomizeArray } from '@/features/game/utils/randomizeArray'
 import { getHighestRating } from '@/features/game/utils/getHighestRating'
-import { detectDevice } from '@/utils/detectDevice'
 import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
 import { TMovie } from '@/features/game/types/movie'
 import { TModalTypes } from '@/features/game/types/modalTypes'
 import { moviesData } from '@/features/game/data/moviesData'
-import { faQuestion } from '@fortawesome/free-solid-svg-icons'
 
 export const Game = () => {
   const [movies, setMovies] = useState<TMovie[] | undefined>(undefined)
@@ -22,7 +19,6 @@ export const Game = () => {
 
   const isRunning = selectedMovie === null
   const showGameOverModal = modalControl === 'gameOver'
-  const showShortcutsModal = modalControl === 'shortcuts'
 
   useKeyboardShortcut({
     keys: ['Space', 'Enter'],
@@ -98,16 +94,7 @@ export const Game = () => {
           width="fit"
           className="px-20 text-xl sm:px-4 sm:text-base"
         />
-        {detectDevice() === 'PC' && (
-          <Button
-            className="fixed bottom-6 right-6"
-            width="fit"
-            icon={faQuestion}
-            onClick={() => setModalControl('shortcuts')}
-          />
-        )}
       </div>
-      <ShortcutsModal showModal={showShortcutsModal} onClose={closeModal} />
       <GameOverModal
         showModal={showGameOverModal}
         streak={points}

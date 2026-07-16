@@ -1,1 +1,1 @@
-export type TModalTypes = 'gameOver' | 'shortcuts' | null
+export type TModalTypes = 'gameOver' | null

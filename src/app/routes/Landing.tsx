@@ -1,7 +1,12 @@
-import { ReactElement } from 'react'
+import { ReactElement, useState } from 'react'
 import { Button } from '@/components/ui/Button'
+import { paths } from '@/config/paths'
+import { faQuestion } from '@fortawesome/free-solid-svg-icons'
+import { detectDevice } from '@/utils/detectDevice'
+import { ShortcutsModal } from '@/features/game/components/ShortcutsModal'
 
 export const Landing = (): ReactElement => {
+  const [showShortcutsModal, setModalControl] = useState(false)
   return (
     <div className="h-screen w-full flex justify-center items-start">
       <div className="flex flex-col p-4">
@@ -25,11 +30,27 @@ export const Landing = (): ReactElement => {
           </p>
 
           <article className="flex flex-col-reverse sm:flex-row justify-center gap-6">
-            <Button text="Highscores" variant="secondary" link="/highscores" />
-            <Button text="Play" link="/game" />
+            <Button
+              text="Highscores"
+              variant="secondary"
+              link={paths.highscores}
+            />
+            <Button text="Play" link={paths.game} />
           </article>
         </section>
       </div>
+      <ShortcutsModal
+        showModal={showShortcutsModal}
+        onClose={() => setModalControl(false)}
+      />
+      {detectDevice() === 'PC' && (
+        <Button
+          className="fixed bottom-6 right-6"
+          width="fit"
+          icon={faQuestion}
+          onClick={() => setModalControl(true)}
+        />
+      )}
     </div>
   )
 }
